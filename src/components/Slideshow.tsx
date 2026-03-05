@@ -1,7 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
 
-// Tell TypeScript that the imported modules have a 'default' string (URL)
 const images = import.meta.glob("../assets/slideshow/*.png", { eager: true }) as Record<string, { default: string }>;
 
 const slideUrls = Object.values(images).map((img) => img.default);
@@ -10,14 +9,14 @@ export default function Slideshow() {
   const [current, setCurrent] = useState(0);
   const [fade, setFade] = useState(true);
 
-  // Auto-advance every 6 seconds
+  //Tranisition Animation
   useEffect(() => {
     const interval = setInterval(() => {
-      setFade(false); // start fade-out
+      setFade(false);
       setTimeout(() => {
         setCurrent((prev) => (prev + 1) % slideUrls.length);
-        setFade(true); // fade-in new slide
-      }, 300); // matches fade transition duration
+        setFade(true);
+      }, 300); 
     }, 6000);
     return () => clearInterval(interval);
   }, []);
@@ -51,7 +50,6 @@ export default function Slideshow() {
           }}
         />
 
-        {/* Navigation arrows */}
         <button
           onClick={prevSlide}
           style={{

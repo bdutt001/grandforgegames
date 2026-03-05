@@ -25,7 +25,7 @@ export default function Project() {
           <br></br>
           Battling warped ideologies and powerful enemies, the player will traverse Athyria to uncover its history and decide its future.
       </p>
-      <img src="/src/assets/WorldMap.png" />
+      <img src="/WorldMap.png"/>
       <p className="quote">
          We were born of change. It is our nature to change the world around us, holding on to what little we have left of ourselves. 
       </p>
