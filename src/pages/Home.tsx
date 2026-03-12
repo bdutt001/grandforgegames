@@ -14,9 +14,9 @@ export default function Home() {
         , an open-world RPG for PC.
       </p>
       <Slideshow></Slideshow>
-      <p className="quote">
+      {/* <p className="quote">
         Rise as a pillar in this forsaken land.
-      </p>
+      </p> */}
       <p>
         Our most recently-published build of Forsaken can be downloaded <nbsp></nbsp>
         <a href= "./Project#builds" >here.</a>

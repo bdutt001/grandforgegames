@@ -25,7 +25,7 @@ export default function Footer() {
         />
       </a>
       <a
-        href=""
+        href="https://www.youtube.com/@GrandForgeGames"
         className="icon-button icon-button--youtube"
         title="YouTube"
       >

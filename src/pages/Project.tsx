@@ -17,9 +17,9 @@ export default function Project() {
           </ul>
       </p>
       <Slideshow></Slideshow>
-      <p className="quote">
+      {/* <p className="quote">
         Rise as a pillar in this forsaken land.
-      </p>
+      </p> */}
       <p>
           The world of Athyria contains ruins and relics of ancient civilizations, fallen for reasons lost to time.
           <br></br>
