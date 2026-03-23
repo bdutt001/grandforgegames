@@ -1,6 +1,6 @@
 import React from "react";
 import Nav from "./Nav";
-import logo from "../assets/logos/logo-serif.png";
+import logo from "../assets/logos/gfg-icon-gold-black.svg";
 
 export default function Header() {
   return (
@@ -8,10 +8,10 @@ export default function Header() {
       <div className="header-left">
         <img
           src = {logo}
-          alt = "Grand Forge Games"
           className = "logo"
         />
-        <p className="tagline">Tempering the Fires of Imagination</p>
+        <h1>Grand Forge Games</h1>
+        {/* <p className="tagline">Tempering the Fires of Imagination</p> */}
       </div>
       <div className="header-right">
         <Nav />

@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 
-const images = import.meta.glob("../assets/slideshow/*.png", { eager: true }) as Record<string, { default: string }>;
+const images = import.meta.glob("../assets/tu/*.png", { eager: true }) as Record<string, { default: string }>;
 const slideUrls = Object.values(images).map((img) => img.default);
 
-export default function Slideshow() {
+export default function SlideshowTU() {
   const [current, setCurrent] = useState(0);
   const [fade, setFade] = useState(true);
   const intervalRef = useRef<number | null>(null);
