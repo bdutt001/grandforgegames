@@ -149,7 +149,7 @@ HEADER
   opacity: 0.85;
 }
 
-.map {
+.forsaken-map {
   margin-bottom: 20px;
   margin-top: 20px;
   margin-left: 180px;
@@ -845,11 +845,18 @@ MEMBERS LIST
 
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   cursor: default;
+
+  border: 2px solid #444;
 }
 
 .team-member-card:hover {
   transform: translateY(-5px);
-  background: rgba(56, 56, 56, 0.8);
+
+  border: 2px solid #edcd6b;
+}
+
+.team-member-card:hover .member-name {
+  color: #edcd6b;
 }
 
 .member-photo {
@@ -861,9 +868,10 @@ MEMBERS LIST
 }
 
 .member-name {
+  color: #9bb0c1;
+
   font-size: 1.25rem;
-  color: #edcd6b;
-  font-weight: 750;
+  font-weight: 650;
   margin-bottom: 10px;
 }
 
@@ -1108,3 +1116,5 @@ PROJECT INFO
 .engine-button:hover .icon.hover {
   opacity: 1;
 }
+
+

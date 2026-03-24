@@ -70,7 +70,7 @@ export default function Forsaken() {
         <br></br>
         Battling warped ideologies and powerful enemies, the player will traverse Athyria to uncover its history and decide its future. 
         
-        <img className="map" src="/WorldMap.png"/>
+        <img className="forsaken-map" src="/WorldMap.png"/>
         
         <br></br>
         Our artists are creating a wealth of unique weapons, armor, and items to collect.

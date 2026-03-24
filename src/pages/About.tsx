@@ -1,7 +1,10 @@
 import {useState} from "react";
-import Bullet from "../assets/icons/hammer.svg";
-import Member from "../components/Member.tsx";
 
+import Bullet from "../assets/icons/hammer.svg";
+
+import Map from "../components/Map.tsx";
+
+import Member from "../components/Member.tsx";
 import Placeholder from "../assets/logos/gfg-icon-gold-black.svg";
 import Nick from "../assets/photos/Nick_S.jpg";
 import Nate from "../assets/photos/Nathan_Y.jpg";
@@ -148,61 +151,81 @@ export default function Team() {
     };
     
     return (
-        <main className="main">
-            <h2>
-                <img src={Bullet} className="bullet"></img>
-                About Us
-            </h2>
-
-            <p>
-                Founded in 2025, Grand Forge Games is an independent game studio 
-                based in Yorktown, Virginia. 
-                <br></br><br></br> 
-                Members of our team have competed in game building competitions,
-                winning the recent <nbsp></nbsp>
-                <a href="https://itch.io/jam/shadows-of-the-imagination-fall25">
-                 "Shadows of the Imagination: A Game Jam"
-                </a>
-                , hosted by Old Dominion University in October of 2025.
-            </p>
-            <div id="meet-the-team">
+        <>
+            <main className="main">
                 <h2>
-                    <img src={Bullet} className="bullet" alt="bullet"/>
-                    Meet the Team
+                    <img src={Bullet} className="bullet"></img>
+                    About Us
                 </h2>
-                <p>
-                    The Grand Forge Games team is comprised of twelve talented members from across the world.
-                </p>
-                <h3>
-                    Filters
-                </h3>
-                <div className="role-filters">
-                    {allTags.map((tag) => (
-                        <span
-                            key={tag}
-                            className={`filter-tag ${selectedRoles.includes(tag) ? "active" : ""}`}
-                            onClick={() => toggleRole(tag)}
-                        >
-                            {tag}
-                        </span>
-                    ))}
-                </div>
-                <button onClick={() => setSelectedRoles([])} className="clear-filters">
-                    Clear Filters
-                </button>
-                <div className="members">
-                    {filteredMembers.map((member) => (
-                        <Member
-                        key={member.name}
-                        name={member.name}
-                        photoUrl={member.photoUrl}
-                        roles={member.roles}
-                        links={member.links}
-                        />
-                    ))}
-                </div>
 
+                <p>
+                    Founded in 2025, Grand Forge Games is an independent game studio 
+                    based in Yorktown, Virginia.
+                    {/* <iframe 
+                        src="https://www.google.com/maps?q=Yorktown,VA&z=5&output=embed"
+                        width="600" 
+                        height="450"
+                        style= {{border:0}}
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                        allowFullScreen
+                    ></iframe> */}
+                </p>
+            </main>
+            <div className="map-parent">
+                <div className="map-wrapper">
+                    <Map />
+                </div>
             </div>
-        </main>
+            <main className="main">
+                <p>
+                    <br></br><br></br> 
+                    Members of our team have competed in game building competitions,
+                    winning the recent
+                    <a href="https://itch.io/jam/shadows-of-the-imagination-fall25">
+                        "Shadows of the Imagination: A Game Jam"
+                    </a>
+                    , hosted by Old Dominion University in October of 2025.
+                </p>
+                <div id="meet-the-team">
+                    <h2>
+                        <img src={Bullet} className="bullet" alt="bullet"/>
+                        Meet the Team
+                    </h2>
+                    <p>
+                        The Grand Forge Games team is comprised of twelve talented members from across the world.
+                    </p>
+                    <h3>
+                        Filters
+                    </h3>
+                    <div className="role-filters">
+                        {allTags.map((tag) => (
+                            <span
+                                key={tag}
+                                className={`filter-tag ${selectedRoles.includes(tag) ? "active" : ""}`}
+                                onClick={() => toggleRole(tag)}
+                            >
+                                {tag}
+                            </span>
+                        ))}
+                    </div>
+                    <button onClick={() => setSelectedRoles([])} className="clear-filters">
+                        Clear Filters
+                    </button>
+                    <div className="members">
+                        {filteredMembers.map((member) => (
+                            <Member
+                            key={member.name}
+                            name={member.name}
+                            photoUrl={member.photoUrl}
+                            roles={member.roles}
+                            links={member.links}
+                            />
+                        ))}
+                    </div>
+
+                </div>
+            </main>
+        </>
     )
 }
