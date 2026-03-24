@@ -51,7 +51,8 @@ export default function Team() {
             photoUrl: Col,
             roles: ["Lead Artist","Visual Design"],
             links: [
-                { type: "linkedin", url: "https://linkedin.com/in/colereese/" }
+                { type: "linkedin", url: "https://linkedin.com/in/colereese/" },
+                { type: "artstation", url: "https://relocsart.artstation.com/"}
             ]
         },
         {
@@ -159,8 +160,8 @@ export default function Team() {
                 </h2>
 
                 <p>
-                    Founded in 2025, Grand Forge Games is an independent game studio 
-                    based in Yorktown, Virginia.
+                    Grand Forge Games is an independent game studio founded in 2025.
+                    We are based in Yorktown, Virginia.
                     {/* <iframe 
                         src="https://www.google.com/maps?q=Yorktown,VA&z=5&output=embed"
                         width="600" 
@@ -171,6 +172,9 @@ export default function Team() {
                         allowFullScreen
                     ></iframe> */}
                 </p>
+                <h3>
+                    Location
+                </h3>
             </main>
             <div className="map-parent">
                 <div className="map-wrapper">
@@ -178,15 +182,6 @@ export default function Team() {
                 </div>
             </div>
             <main className="main">
-                <p>
-                    <br></br><br></br> 
-                    Members of our team have competed in game building competitions,
-                    winning the recent
-                    <a href="https://itch.io/jam/shadows-of-the-imagination-fall25">
-                        "Shadows of the Imagination: A Game Jam"
-                    </a>
-                    , hosted by Old Dominion University in October of 2025.
-                </p>
                 <div id="meet-the-team">
                     <h2>
                         <img src={Bullet} className="bullet" alt="bullet"/>
@@ -194,9 +189,16 @@ export default function Team() {
                     </h2>
                     <p>
                         The Grand Forge Games team is comprised of twelve talented members from across the world.
+                        Members of our team have competed in several game jams, 
+                        taking first prize in
+                        {'\u00A0'}
+                        <a href="https://itch.io/jam/shadows-of-the-imagination-fall25">
+                            "Shadows of the Imagination: A Game Jam"
+                        </a>
+                        , hosted by Old Dominion University in October of 2025.
                     </p>
                     <h3>
-                        Filters
+                        Roles
                     </h3>
                     <div className="role-filters">
                         {allTags.map((tag) => (

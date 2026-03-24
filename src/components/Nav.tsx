@@ -1,4 +1,4 @@
-import { Navbar, Nav, NavDropdown, Container } from 'react-bootstrap';
+import { Navbar, Nav, NavDropdown, Container} from 'react-bootstrap';
 import { useState, useRef} from "react";
 import {Navigate, useNavigate} from "react-router-dom";
 
@@ -49,13 +49,21 @@ export default function NavFunc() {
                 }, 150);
               }}
             >
-            <NavDropdown
-              title="Projects"
-              id="projects-dropdown"
-              show={projectsOpen}
+          <NavDropdown
+            id="projects-dropdown"
+            show={projectsOpen}
+            title={
+              <span
+                className="nav-dropdown-link"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  navigate("/projects");
+                }}
+              >
+                Projects
+              </span>
+            }
             >
-              <NavDropdown.Item href="/projects">All</NavDropdown.Item>
-              <NavDropdown.Header className='nav-header'>In Development</NavDropdown.Header>
               <NavDropdown.Item href="/forsaken">Forsaken</NavDropdown.Item>
               <NavDropdown.Item href="/temporal-urgency">Temporal Urgency</NavDropdown.Item>
             </NavDropdown>

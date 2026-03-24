@@ -10,7 +10,7 @@ export default function HQMap() {
 
   const position: [number, number] = [37.112965, -76.434074];
 
-  // Step 1: Wait until container has non-zero width and height
+  // Wait until container has non-zero width and height
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
@@ -26,7 +26,6 @@ export default function HQMap() {
     waitForSize();
   }, []);
 
-  // Step 2: Initialize Leaflet only when ready
   useEffect(() => {
     if (!ready || !containerRef.current) return;
 
@@ -38,7 +37,7 @@ export default function HQMap() {
 
     const map = L.map(containerRef.current, {
       center: position,
-      zoom: 16,
+      zoom: 10,
       scrollWheelZoom: false,
     });
 
@@ -47,24 +46,53 @@ export default function HQMap() {
       { subdomains: "abcd" }
     ).addTo(map);
 
+    L.tileLayer(
+      "https://{s}.basemaps.cartocdn.com/dark_only_labels/{z}/{x}/{y}{r}.png",
+      { 
+        subdomains: "abcd", 
+        // attribution: "&copy; Carto" 
+      }
+    ).addTo(map);
+
     const customIcon = L.divIcon({
       className: "",
-      html: `<div style="position:absolute;transform:translate(-50%,-100%);width:85px;height:85px;">
-              <div style="position:absolute;bottom:0;left:50%;width:85px;height:85px;border-radius:50%;background:rgba(194,65,12,0.5);animation:pulse 1.5s infinite;transform:translateX(-50%);"></div>
-              <img src="${Pin}" style="width:85px;height:85px;object-fit:contain;" />
+      html: `<div style="
+                position:absolute;
+                transform:translate(-50%,-100%);
+                width:85px;
+                height:85px;
+              ">
+              <div style="
+                position:absolute;
+                bottom:-40px;
+                left:0;
+                width:85px;
+                height:85px;
+                z-index:-1;
+                border-radius:50%;
+                background:rgba(194,65,12,0.8);
+                animation:pulse 1.5s infinite;
+                transform:translateX(-50%);
+              "></div>
+              <img src="${Pin}" 
+                style="
+                width:85px;
+                height:85px;
+                object-fit:contain;
+              " />
              </div>`,
       iconSize: [0, 0],
       iconAnchor: [0, 0],
     });
 
-    L.marker(position, { icon: customIcon }).addTo(map).bindPopup("Grand Forge Games HQ");
+    L.marker(position, { icon: customIcon }).addTo(map);
 
     mapRef.current = map;
 
-    // Step 3: Force recalculation after next paint
+    // Force recalculation after next paint
     requestAnimationFrame(() => {
       map.invalidateSize();
-      map.setView(position, 16);
+      map.setView(position, 10);
     });
 
     return () => {

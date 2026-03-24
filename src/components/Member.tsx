@@ -2,6 +2,7 @@ import React from "react";
 
 import linkedinIcon from "../assets/logos/linkedin.svg";
 import githubIcon from "../assets/logos/github.svg";
+import artstationIcon from "../assets/icons/artstation.svg";
 
 interface Link {
     type: string;
@@ -18,6 +19,7 @@ interface TeamMemberProps {
 const iconMap: Record<string, string> = {
   linkedin: linkedinIcon,
   github: githubIcon,
+  artstation: artstationIcon,
 };
 
 const TeamMemberCard: React.FC<TeamMemberProps> = ({ name, photoUrl, roles, links }) => {
