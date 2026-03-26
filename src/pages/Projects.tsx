@@ -12,8 +12,8 @@ export default function Projects() {
             </h2>
             <p>
                 All of our projects can be found below.
-                <br></br><br></br>
-                <h3>In Development:</h3>
+                <br/>
+                
                 <div className="games-container">
                     <div className="game-card">
                         <a href="/forsaken">
@@ -22,7 +22,7 @@ export default function Projects() {
                             <div className="game-overlay">
                             <h3 className="game-title">Forsaken</h3>
                             <p className="game-status">In Development</p>
-                            <p className="game-date">No Release Announced</p>
+                            <p className="game-date available">Playtest Available</p>
                             </div>
                         </a>
                     </div>
@@ -33,7 +33,7 @@ export default function Projects() {
                             <div className="game-overlay">
                             <h3 className="game-title">Temporal Urgency</h3>
                             <p className="game-status">In Development</p>
-                            <p className="game-date">No Release Announced</p>
+                            <p className="game-date unavailable">No Release Announced</p>
                             </div>
                         </a>
                     </div>

@@ -37,7 +37,7 @@ export default function HQMap() {
 
     const map = L.map(containerRef.current, {
       center: position,
-      zoom: 10,
+      zoom: 17,
       scrollWheelZoom: false,
     });
 
@@ -106,8 +106,8 @@ export default function HQMap() {
       ref={containerRef}
       style={{
         width: "100%",
-        maxWidth: "900px",
-        height: "400px",
+        maxWidth: "60vw",
+        height: "40vh",
         margin: "0 auto",
         position: "relative",
         borderRadius: "16px",

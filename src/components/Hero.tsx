@@ -7,13 +7,12 @@ export default function Hero() {
   const navigateToTeam = () => {
     navigate({
       pathname: "/about",
-      hash: "#meet-the-team"
+      hash: "#team"
     });
 
-    // wait for the page to render
     setTimeout(() => {
-      scrollToElement("meet-the-team");
-    }, 100); // 100ms delay is usually enough
+      scrollToElement("team");
+    }, 100);
   };
 
   return (

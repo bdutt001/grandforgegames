@@ -3,6 +3,7 @@ import React from "react";
 import linkedinIcon from "../assets/logos/linkedin.svg";
 import githubIcon from "../assets/logos/github.svg";
 import artstationIcon from "../assets/icons/artstation.svg";
+import googlesitesIcon from "../assets/icons/googlesites.svg";
 
 interface Link {
     type: string;
@@ -20,6 +21,7 @@ const iconMap: Record<string, string> = {
   linkedin: linkedinIcon,
   github: githubIcon,
   artstation: artstationIcon,
+  googlesites: googlesitesIcon,
 };
 
 const TeamMemberCard: React.FC<TeamMemberProps> = ({ name, photoUrl, roles, links }) => {

@@ -16,6 +16,7 @@ import Leo from "../assets/photos/Leo_E.jpg";
 import Hazel from "../assets/photos/Olivia_B.jpg";
 import Tavier from "../assets/photos/Tavier_F.jpg";
 import Elhadg from "../assets/photos/Elhadg.jpg";
+import Avery from "../assets/photos/Avery_B.jpg";
 
 
 
@@ -24,7 +25,7 @@ export default function Team() {
         {
             name: "Nick Scherer",
             photoUrl: Nick,
-            roles: ["Project Lead","Programmer"],
+            roles: ["CEO","Programmer"],
             links: [
                 { type: "linkedin", url: "https://linkedin.com/in/nicholas-scherer-6273a62aa/" }
             ]
@@ -58,7 +59,7 @@ export default function Team() {
         {
             name: "William Latimer",
             photoUrl: Billiam,
-            roles: ["Creative Director","Lead Composer","Lead Writer"],
+            roles: ["Creative Director","Lead Composer"],
             links: [
                 { type: "linkedin", url: "https://linkedin.com/in/wiliam-latimer-08687a395/" }
             ]
@@ -88,6 +89,15 @@ export default function Team() {
             ]
         },
         {
+            name: "Avery Baker",
+            photoUrl: Avery,
+            roles: ["Programmer"],
+            links: [
+                {type: "linkedin", url:"https://www.linkedin.com/in/averybaker4519/"},
+                {type: "googlesites", url:"https://sites.google.com/view/averybakerportfolio/games"}
+            ]
+        },
+        {
             name: "Shavon",
             photoUrl: Placeholder,
             roles: ["Visual Design"],
@@ -114,11 +124,11 @@ export default function Team() {
         {
             name: "Hazel",
             photoUrl: Hazel,
-            roles: ["Writer"],
+            roles: ["Lead Writer"],
             links: [
                 
             ]
-        }
+        },
     ]
 
     const allRoles = [...new Set(members.flatMap(m => m.roles))];
@@ -182,7 +192,7 @@ export default function Team() {
                 </div>
             </div>
             <main className="main">
-                <div id="meet-the-team">
+                <div id="team">
                     <h2>
                         <img src={Bullet} className="bullet" alt="bullet"/>
                         Meet the Team

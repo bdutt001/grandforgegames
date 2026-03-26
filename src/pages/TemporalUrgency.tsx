@@ -3,9 +3,9 @@ import Bullet from "../assets/icons/hammer.svg";
 import SlideshowTU from "../components/SlideshowTU";
 
 import Star from "../assets/icons/star.svg";
-import StarHover from "../assets/icons/star-white.svg";
+import StarHover from "../assets/icons/star-gold.svg";
 import Unreal from "../assets/icons/unreal.svg";
-import UnrealHover from "../assets/icons/unreal-white.svg";
+import UnrealHover from "../assets/icons/unreal-gold.svg";
 
 export default function TemporalUrgency(){
     return (

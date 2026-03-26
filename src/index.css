@@ -59,8 +59,8 @@ a:hover {
 }
 
 .main {
-  max-width: 900px;
-  width: 100%; 
+  max-width: 1100px;
+  width: 90%; 
   margin: 0 auto;
   overflow: hidden;
   display: flex;
@@ -108,8 +108,11 @@ HEADER
   justify-content: space-between;
   align-items: center;
   padding: 2.5rem 3rem;
+  
+  max-height: 150px;
+
   top: 0;
-  background: rgba(11, 11, 11, 0.7);
+  background: rgba(11, 11, 11, 0.4);
   backdrop-filter: blur(8px);
   z-index:10000;
 }
@@ -149,11 +152,6 @@ HEADER
   opacity: 0.85;
 }
 
-.forsaken-map {
-  margin-bottom: 20px;
-  margin-top: 20px;
-  margin-left: 180px;
-}
 
 img{
   width: 60%;
@@ -503,10 +501,24 @@ GAME CARDS
   margin-bottom:10px;
   padding: 6px 14px;
   border-radius: 999px;
+}
 
+.game-status {
   background: rgba(194, 65, 12, 0.15);
   color: #ff8a5b;
   border: 2px solid #c2410c;
+}
+
+.game-date.available {
+  background: rgba(194, 173, 12, 0.15);
+  color: #edcd6b;
+  border: 2px solid #eccd45;
+}
+
+.game-date.unavailable {
+  background: rgba(194, 12, 12, 0.15);
+  color: #ed6b6b;
+  border: 2px solid #ec4545;
 }
 
 .game-title::after {
@@ -548,7 +560,7 @@ SLIDESHOWS
 */
 
 .slideshow {
-  max-width: 900px;
+  max-width: 60vw;
   margin: 0 auto;
 }
 
@@ -851,7 +863,7 @@ HERO BANNER
 
 .hero {
   position: relative;
-  height: 80vh;
+  height: 90vh;
   min-height: 500px;
 
   display: flex;
@@ -1008,6 +1020,10 @@ MEMBERS LIST
   color: #edcd6b;
 }
 
+.team-member-card:hover .role-badge {
+   background: #edcd6b;
+}
+
 .member-photo {
   width: 100px;
   height: 100px;
@@ -1157,22 +1173,10 @@ PROJECT INFO
   gap: 12px;
 }
 
-.subheading {
-  display: flex;
-  flex-direction: column;
-
-  padding-left: 10px;
-  gap: 10px;
-  align-items: left;
-
-  flex-wrap: wrap; 
-
-  margin-bottom: 20px;
-}
-
 .status,
 .director-button,
-.engine-button {
+.engine-button,
+.release-button {
   display: inline-flex;    
   align-items: center;     
   justify-content: center;
@@ -1193,23 +1197,38 @@ PROJECT INFO
   cursor: default;
 }
 
-/* .director-button img {
+.director-button img {
   max-width: 50px;
   width: 100%;
   max-height: 50px;
   height: 100%;
-} */
+}
 
-.status{
-  margin-left: 15px;
+.status {
   padding: 6px 14px;
   border-radius: 999px;
+}
 
+.status {
+  margin-left: 15px;
   background: rgba(194, 65, 12, 0.15);
   color: #ff8a5b;
   border: 2px solid #c2410c;
 }
 
+.subheading {
+  display: flex;
+  flex-direction: row;
+
+  gap: 10px;
+  align-items: left;
+
+  flex-wrap: wrap; 
+
+  margin-bottom: 20px;
+}
+
+.release-button,
 .director-button,
 .engine-button {
   background: #2b2b2b;
@@ -1218,19 +1237,19 @@ PROJECT INFO
 
   margin-bottom: 5px;
   
-  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.15s ease, background 0.15s ease;
   will-change: transform; 
 }
 
+.release-button:hover,
 .director-button:hover,
 .engine-button:hover {
-  background: #c2410c;
-  color: #eeeeee;
+  color: #edcd6b;
 
-  transform: scale(1.05);
+  transform: translateY(4px);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 
-  border: 2px solid #c2410c;
+  border: 2px solid #edcd6b;
 }
 
 .director-button img {
@@ -1240,9 +1259,16 @@ PROJECT INFO
 
 .engine-button img {
   width: 30px;
-  margin-right:10px;
+  margin-right: 10px;
 }
 
+.release-button img {
+  width: 18px;
+  margin-right: 7px;
+  margin-left: 2px;
+}
+
+.release-wrapper,
 .director-wrapper,
 .engine-wrapper {
   position: relative;
@@ -1256,14 +1282,42 @@ PROJECT INFO
   justify-content: center;
 }
 
+.release-button:hover .icon.base,
 .director-button:hover .icon.base,
 .engine-button:hover .icon.base {
   opacity: 0;
 }
 
+.release-button:hover .icon.hover,
 .director-button:hover .icon.hover,
 .engine-button:hover .icon.hover {
   opacity: 1;
 }
 
+/*
+=================
+FORSAKEN
+=================
+*/
 
+.athyria-section {
+  display: flex;
+  flex-direction: row;
+  align-items: top;
+}
+  
+.athyria {
+  max-width: 30vw;
+}
+
+.forsaken-map {
+  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.forsaken-map img{
+  max-width: 500px;
+  width: 100%;
+  margin-top: 0;
+}
