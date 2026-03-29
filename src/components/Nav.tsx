@@ -5,13 +5,16 @@ import {Navigate, useNavigate} from "react-router-dom";
 import { scrollToElement } from "../utils/scrollHelpers";
 
 export default function NavFunc() {
+
+  const navigate = useNavigate();
+
+  const isMobile = window.innerWidth < 1000;
+
   const [aboutOpen, setAboutOpen] = useState(false);
   const [projectsOpen, setProjectsOpen] = useState(false);
 
   const aboutTimeout = useRef<number | null>(null);
   const projectsTimeout = useRef<number | null>(null);
-
-  const navigate = useNavigate();
 
   const navigateToTeam = () => {
     navigate({
@@ -28,15 +31,16 @@ export default function NavFunc() {
   return (
     <Navbar variant="dark" expand="lg">
       <Container>
-        <Navbar.Collapse>
-          <Nav>
+        <Navbar.Toggle aria-controls="main-nav"/>
+        <Navbar.Collapse id="main-nav"> 
+          <Nav className="ms-auto">
             <a href="/" className="nav-item-link">Home</a>
             <a href="/about" className="nav-item-link">About</a>
             <a onClick={() => navigateToTeam()} className="nav-item-link">
               Members
             </a>
             
-            <div className='nav-item-dropdown'
+            {/* <div className='nav-item-dropdown'
               onMouseEnter={() => {
                 if (projectsTimeout.current !== null) {
                   clearTimeout(projectsTimeout.current);
@@ -49,26 +53,78 @@ export default function NavFunc() {
                 }, 150);
               }}
             >
-          <NavDropdown
-            id="projects-dropdown"
-            show={projectsOpen}
-            title={
-              <span
-                className="nav-dropdown-link"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  navigate("/projects");
+            <NavDropdown
+              id="projects-dropdown"
+              show={projectsOpen}
+              title={
+                <span
+                  className="nav-dropdown-link"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    navigate("/projects");
+                  }}
+                >
+                  Projects
+                </span>
+              }
+              >
+                <NavDropdown.Item href="/forsaken">Forsaken</NavDropdown.Item>
+                <NavDropdown.Item href="/temporal-urgency">Temporal Urgency</NavDropdown.Item>
+              </NavDropdown> */}
+            {isMobile ? (
+              /* ================= MOBILE VERSION ================= */
+              <div className="mobile-dropdown">
+                <div
+                  className="nav-item-link mobile-toggle"
+                  onClick={() => setProjectsOpen(!projectsOpen)}
+                >
+                  Projects
+                  <span className={`arrow ${projectsOpen ? "open" : ""}`}>▾</span>
+                </div>
+
+                <div className={`mobile-submenu ${projectsOpen ? "open" : ""}`}>
+                  <a href="/forsaken" className="dropdown-item">Forsaken</a>
+                  <a href="/temporal-urgency" className="dropdown-item">Temporal Urgency</a>
+                  <a href="/projects" className="dropdown-item">All</a>
+                </div>
+              </div>
+
+            ) : (
+              /* ================= DESKTOP VERSION ================= */
+              <div
+                className='nav-item-dropdown'
+                onMouseEnter={() => {
+                  if (projectsTimeout.current !== null) {
+                    clearTimeout(projectsTimeout.current);
+                  }
+                  setProjectsOpen(true);
+                }}
+                onMouseLeave={() => {
+                  projectsTimeout.current = setTimeout(() => {
+                    setProjectsOpen(false);
+                  }, 150);
                 }}
               >
-                Projects
-              </span>
-            }
-            >
-              <NavDropdown.Item href="/forsaken">Forsaken</NavDropdown.Item>
-              <NavDropdown.Item href="/temporal-urgency">Temporal Urgency</NavDropdown.Item>
-            </NavDropdown>
-            </div>
-
+                <NavDropdown
+                  id="projects-dropdown"
+                  show={projectsOpen}
+                  title={
+                    <span
+                      className="nav-dropdown-link"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        navigate("/projects");
+                      }}
+                    >
+                      Projects
+                    </span>
+                  }
+                >
+                  <NavDropdown.Item href="/forsaken">Forsaken</NavDropdown.Item>
+                  <NavDropdown.Item href="/temporal-urgency">Temporal Urgency</NavDropdown.Item>
+                </NavDropdown>
+              </div>
+            )}
           </Nav>
         </Navbar.Collapse>
       </Container>
