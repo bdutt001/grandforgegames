@@ -5,15 +5,25 @@
 }
 
 :root {
+  --background-color: rgb(11,11,11);
+  --background-translucent: rgba(11, 11, 11, 0.4);
+  --shadow-color: rgba(0,0,0,0.7);
+
   --heading-color: #edcd6b;
+
   --primary-text-color: #edf7ff;
   --secondary-text-color: #9bb0c1;
+  --tertiary-text-color: #eeeeee;
 
-  --link-color: #ff733c;
-  --link-color-hover: #ff8757;
+  --link-color: #60a5fa;
+  --link-color-hover: #93c5fd;
 
-  --background-translucent: rgba(11, 11, 11, 0.4);
-
+  --accent-color: #c2410c;
+  --accent-text-color: #ff8a5b;
+  --accent-shadow-color: rgba(194, 65, 12, 0.4);
+  
+  --button-bg-color: #444;
+  --dot-color: #515b63; 
 }
 
 /* 
@@ -58,11 +68,9 @@ hr {
 body {
   margin-top: 20px;
   margin: 0;
-  background: rgb(11, 11, 11);
-  /* color: #edf7ff; */
+  background: var(--background-color);
   color: var(--primary-text-color);
   font-family: system-ui, sans-serif;
-  /* font-size: large; */
 }
 
 a {
@@ -233,12 +241,12 @@ NAVIGATION MENU
 
 .nav-item-link:hover {
   background-color: transparent;
-  color: var(--link-color-hover);
+  color: var(--heading-color);
   transform: translateY(5px);
 }
 
 .dropdown-toggle:hover {
-  color: var(--link-color-hover);
+  color: var(--heading-color);
   transform: translateY(5px);
 }
 
@@ -299,11 +307,11 @@ NAVIGATION MENU
 }
 
 .dropdown-toggle.active {
-  color: var(--link-color-hover);
+  color: var(--heading-color);
 }
 
 .dropdown-toggle.show {
-  color: var(--link-color-hover) !important;
+  color: var(--heading-color) !important;
   opacity: 1;
 }
 
@@ -347,7 +355,7 @@ NAVIGATION MENU
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
-  color: var(--link-color-hover);
+  color: var(--heading-color);
 }
 
 /* 
@@ -376,12 +384,12 @@ NAVIGATION MENU
 }
 
 .nav-dropdown-link:hover {
-  color: var(--link-color-hover);
+  color: var(--heading-color);
 }
 
 .dropdown-item:hover {
   background-color: transparent;
-  color: var(--link-color-hover);
+  color: var(--heading-color);
   opacity: 1;
   transform: translateX(-4px);
 } 
@@ -389,7 +397,7 @@ NAVIGATION MENU
 .dropdown-item.active::after {
   content: "";
   height: 2px;
-  background: var(--link-color-hover);
+  background: var(--heading-color);
   margin-top: 50px;
 }
 
@@ -404,7 +412,7 @@ NAVIGATION MENU
   font-size: 2rem;
   background: none;
   border: none;
-  color: #edcd6b;
+  color: var(--heading-color);
   cursor: pointer;
   z-index: 11000;
 }
@@ -427,7 +435,6 @@ GAME CARDS
   aspect-ratio: 3 / 4;
   width: min(100%, 260px);
   position: relative;
-  /* width: 260px; */
   border-radius: 16px;
   overflow: hidden;
   cursor: pointer;
@@ -439,7 +446,7 @@ GAME CARDS
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0);
+  /* background: rgba(0,0,0,0); */
   transition: background 0.3s ease;
   z-index: 1;
 }
@@ -466,7 +473,7 @@ GAME CARDS
 
 .game-card:hover {
   transform: translateY(-6px);
-  border: 2px solid #edcd6b;
+  border: 2px solid var(--heading-color);
 }
 
 .game-card:hover img {
@@ -505,10 +512,10 @@ GAME CARDS
 }
 
 .game-title {
-  color: #edcd6b;
+  color: var(--heading-color);
   font-size: 1.6rem;
   margin-bottom: 5px;
-  text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.7);
+  text-shadow: 0px 0px 20px var(--shadow-color);
 }
 
 .game-title::after {
@@ -519,10 +526,10 @@ GAME CARDS
   margin-top: 10px;
   margin-bottom: 5px;
 
-  background: #edcd6b;
+  background: var(--heading-color);
   opacity: 0.8;
 
-  box-shadow: 0 0px 20px rgba(0,0,0,0.7);
+  box-shadow: 0 0px 20px var(--shadow-color);
 }
 
 .game-status,
@@ -555,13 +562,13 @@ GAME CARDS
 
 .game-status {
   background: rgba(194, 65, 12, 0.15);
-  color: #ff8a5b;
-  border: 2px solid #c2410c;
+  color: var(--accent-text-color);
+  border: 2px solid var(--accent-color);
 }
 
 .game-date.available {
   background: rgba(194, 173, 12, 0.15);
-  color: #edcd6b;
+  color: var(--heading-color);
   border: 2px solid #eccd45;
 }
 
@@ -579,29 +586,11 @@ GAME CARDS
   margin-top: 10px;
   margin-bottom: 5px;
 
-  background: #edcd6b;
+  background: var(--heading-color);
   opacity: 0.8;
 
-  box-shadow: 0 0px 20px rgba(0,0,0,0.7);
+  box-shadow: 0 0px 20px var(--shadow-color);
 }
-
-/* .game-date {
-  color: #ff8a5b;
-  font-size: 0.9rem;
-  font-weight: 600;
-  margin-top: 0px;
-} */
-
-/* .game-overlay::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background: #edcd6b;
-  opacity: 0.8;
-} */
 
 /* 
 ======================
@@ -702,18 +691,18 @@ SLIDESHOWS
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: #515b63;
+  background-color: var(--dot-color);
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 .dot.active {
-  background-color: #edcd6b;
+  background-color: var(--heading-color);
   transform: scale(1.2);
 }
 
 .dot:hover {
-  background-color: #9BB0C1;
+  background-color: var(--secondary-text-color);
 }
 
 .caption {
@@ -737,7 +726,7 @@ FOOTER
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  background: rgba(11, 11, 11, 0.7);
+  background: var(--background-translucent);
   backdrop-filter: blur(8px);
 }
 
@@ -778,7 +767,7 @@ FOOTER
 .footer-left p {
   margin: 0;
   font-size: 1rem;
-  color: #9bb0c1;
+  color: var(--secondary-text-color);
 }
 
 .copyright {
@@ -789,9 +778,9 @@ FOOTER
 .button {
   display: inline-block;
   padding: 0.75rem 1.5rem;
-  background: #c2410c;
+  background: var(--accent-color);
   width: fit-content;
-  color: #eeeeee;
+  color: var(--tertiary-text-color);
   font-weight: bold;
   text-decoration: none;
   border-radius: 0.5rem;
@@ -813,7 +802,7 @@ FOOTER
   height: 40px;
 
   color: black;
-  background-color: #9bb0c1;
+  background-color: var(--secondary-text-color);
 
   text-decoration: none;
   border-radius: 0.5rem;
@@ -828,7 +817,7 @@ FOOTER
   height: 40px;
 
   color: white;
-  background-color: #9BB0C1;
+  background-color: var(--secondary-text-color);
 
   text-decoration: none;
   border-radius: 0.5rem;
@@ -844,8 +833,8 @@ FOOTER
 }
 
 .contact-button:hover {
-  background: #c2410c;
-  color: #eeeeee;
+  background: var(--accent-color);
+  color: var();
   transform: translateY(-3px);
 }
 
@@ -946,7 +935,7 @@ HERO BANNER
 }
 
 .hero-text {
-  color: #edcd6b;
+  color: var(--heading-color);
 
   text-align: center;
 }
@@ -1004,19 +993,19 @@ HERO BANNER
   text-decoration: none;
   transition: all 0.2s ease;
   border-radius: 6px;
-  border: 1px solid #edcd6b;
-  color: #edcd6b;
+  border: 1px solid var(--heading-color);
+  color: var(--heading-color);
 }
 
 .btn-primary:hover,
 .btn-secondary:hover {
-  background: #c2410c;
-  color: #eeeeee;
-  border: 1px solid #c2410c;
+  background: var(--accent-color);
+  color: var(--tertiary-text-color);
+  border: 1px solid var(--accent-color);
 
   transform: translateY(-3px);
   transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(194, 65, 12, 0.4);
+  box-shadow: 0 5px 15px var(--accent-shadow-color);
 }
 
 /*
@@ -1059,21 +1048,21 @@ MEMBERS LIST
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   cursor: default;
 
-  border: 2px solid #444;
+  border: 2px solid var(--button-bg-color);
 }
 
 .team-member-card:hover {
   transform: translateY(-5px);
 
-  border: 2px solid #edcd6b;
+  border: 2px solid var(--heading-color);
 }
 
 .team-member-card:hover .member-name {
-  color: #edcd6b;
+  color: var(--heading-color);
 }
 
 .team-member-card:hover .role-badge {
-   background: #edcd6b;
+   background: var(--heading-color);
 }
 
 .member-photo {
@@ -1085,7 +1074,7 @@ MEMBERS LIST
 }
 
 .member-name {
-  color: #9bb0c1;
+  color: var(--secondary-text-color);
 
   font-size: 1.25rem;
   font-weight: 650;
@@ -1100,7 +1089,7 @@ MEMBERS LIST
 }
 
 .role-badge {
-  background: #9bb0c1;
+  background: var(--secondary-text-color);
   color: #111;
   font-size: 0.85rem;
   padding: 4px 10px;
@@ -1167,25 +1156,25 @@ MEMBERS LIST
   padding: 6px 14px;
   border-radius: 999px;
   background: #2b2b2b;
-  color: #9BB0C1;
+  color: var(--secondary-text-color);
   cursor: pointer;
   font-weight: 600;
   font-size: 0.9rem;
-  border: 2px solid #444;
+  border: 2px solid var(--button-bg-color);
 
   transition: all 0.2s ease;
 }
 
 .filter-tag:hover {
-  color: #edcd6b;
-  border-color: #edcd6b;
+  color: var(--heading-color);
+  border-color: var(--heading-color);
   transform: translateY(-2px);
 }
 
 .filter-tag.active {
-  background: #c2410c;
-  color: #eeeeee;
-  border-color: #c2410c;
+  background: var(--accent-color);
+  color: var(--tertiary-text-color);
+  border-color: var(--accent-color);
 }
 
 .clear-filters {
@@ -1193,8 +1182,8 @@ MEMBERS LIST
   border-radius: 999px;
 
   background: rgba(194, 65, 12, 0.15);
-  color: #ff8a5b;
-  border: 2px solid #c2410c;
+  color: var(--accent-text-color);
+  border: 2px solid var(--accent-color);
 
   cursor: pointer;
   font-weight: 600;
@@ -1205,12 +1194,12 @@ MEMBERS LIST
 }
 
 .clear-filters:hover {
-  background: #c2410c;
-  color: #eeeeee;
-  border-color: #c2410c;
+  background: var(--accent-color);
+  color: var(--tertiary-text-color);
+  border-color: var(--accent-color);
 
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(194, 65, 12, 0.4);
+  box-shadow: 0 4px 12px var(--accent-shadow-color);
 }
 
 /*
@@ -1264,8 +1253,8 @@ PROJECT INFO
 .status {
   margin-left: 15px;
   background: rgba(194, 65, 12, 0.15);
-  color: #ff8a5b;
-  border: 2px solid #c2410c;
+  color: var(--accent-text-color);
+  border: 2px solid var(--accent-color);
 }
 
 .subheading {
@@ -1284,8 +1273,8 @@ PROJECT INFO
 .director-button,
 .engine-button {
   background: #2b2b2b;
-  color: #9bb0c1;
-  border: 2px solid #444;
+  color: var(--secondary-text-color);
+  border: 2px solid var(--button-bg-color);
 
   margin-bottom: 5px;
   
@@ -1296,12 +1285,12 @@ PROJECT INFO
 .release-button:hover,
 .director-button:hover,
 .engine-button:hover {
-  color: #edcd6b;
+  color: var(--heading-color);
 
   transform: translateY(4px);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 
-  border: 2px solid #edcd6b;
+  border: 2px solid var(--heading-color);
 }
 
 .director-button img {
@@ -1413,7 +1402,7 @@ MEDIA QUERIES
     right: -10px;
 
     width: fit-content;
-    background: rgba(11, 11, 11, 0.95);
+    background: var(--background-translucent);
     backdrop-filter: blur(8px);
 
     padding: 1rem 2rem;
@@ -1440,7 +1429,7 @@ MEDIA QUERIES
 
   .nav-item-link:hover {
   background-color: transparent;
-  color: #ff733c;
+  color: var(--heading-color);
   transform: translateX(-5px);
   }
 
