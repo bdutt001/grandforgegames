@@ -60,8 +60,8 @@ export default function SpriteSlideshow() {
           onClick={nextSlide}
         />
       </div>
-      <div className = "caption">
-        {slides[current].caption}
+      <div className = "description">
+        <p>{slides[current].caption}</p>
       </div>
       <div className="dots">
         {slides.map((_, index) => (

@@ -90,7 +90,7 @@ export default function Slideshow() {
             left: 10,
             top: "50%",
             transform: "translateY(-50%)",
-            background: "rgba(0,0,0,0.5)",
+            background: "rgba(0,0,0,0.25)",
             color: "white",
             border: "none",
             padding: "0.5rem 1rem",
@@ -107,7 +107,7 @@ export default function Slideshow() {
             right: 10,
             top: "50%",
             transform: "translateY(-50%)",
-            background: "rgba(0,0,0,0.5)",
+            background: "rgba(0,0,0,0.25)",
             color: "white",
             border: "none",
             padding: "0.5rem 1rem",
@@ -116,6 +116,11 @@ export default function Slideshow() {
         >
           ›
         </button>
+      </div>
+      <div className="caption">
+        <p>
+          All images captured within Unreal Engine.
+        </p>
       </div>
       <div className="dots">
         {slideUrls.map((_, index) => (

@@ -117,6 +117,11 @@ export default function SlideshowTU() {
           ›
         </button>
       </div>
+      <div className="caption">
+        <p>
+          All images captured within Unreal Engine.
+        </p>
+      </div>
       <div className="dots">
         {slideUrls.map((_, index) => (
           <span

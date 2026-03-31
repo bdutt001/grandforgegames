@@ -13,6 +13,8 @@ import StarHover from "../assets/icons/star-gold.svg";
 import Unreal from "../assets/icons/unreal.svg";
 import UnrealHover from "../assets/icons/unreal-gold.svg";
 
+import SectionHeader from "../components/SectionHeader";
+
 export default function Forsaken() {
   const navigate = useNavigate();
 
@@ -30,20 +32,19 @@ export default function Forsaken() {
   return (
     <main className="main">
       <div className="game-row">
-        <h2>
-          <img src={Bullet} className="bullet"></img>
-          Project Forsaken
-        </h2>
-        <span className="status">In Development </span>
+        <SectionHeader icon={Bullet} >
+          Forsaken
+        </SectionHeader>
+        <span className="tag-indicator status">In Development </span>
       </div>
-
+      
       <div className="subheading">
-        
+
         <a 
           href="/forsaken#builds"
-          className="release-button"
+          className="tag-button release"
         >
-          <span className="release-wrapper available">
+          <span className="icon-wrapper available">
             <img src={Play} className="icon base"/>
             <img src={PlayHover} className="icon hover"/>
           </span>
@@ -52,9 +53,9 @@ export default function Forsaken() {
 
         <a
           onClick={() => navigateToTeam()}
-          className="director-button"
+          className="tag-button director"
         >
-          <span className="director-wrapper">
+          <span className="icon-wrapper">
             <img src={Star} className="icon base"/>
             <img src={StarHover} className="icon hover"/>
           </span>
@@ -63,9 +64,9 @@ export default function Forsaken() {
 
         <a
           href=""
-          className="engine-button"
+          className="tag-button engine"
         >
-          <span className="engine-wrapper">
+          <span className="icon-wrapper">
             <img src={Unreal} className="icon base"/>
             <img src={UnrealHover} className="icon hover"/>
           </span>
@@ -88,10 +89,8 @@ export default function Forsaken() {
         Screenshots
       </h3>
       <Slideshow></Slideshow>
-      <p>
-        All images were captured within Unreal Engine.
-      </p>
-      
+
+      <p>More coming soon!</p>
       
       {/* <p className="quote">
          We were born of change. It is our nature to change the world around us, holding on to what little we have left of ourselves. 
@@ -122,18 +121,19 @@ export default function Forsaken() {
       
       
       <div id="builds">
-        <h2>
-          <img src={Bullet} className="bullet"></img>
-          Builds
-        </h2>
+        <SectionHeader icon={Bullet}>
+          Download
+        </SectionHeader>
         <p>
            
         </p>
         
-        <h3>Playtest 1</h3>
-        <p className="date">
-          December 10th, 2025
-        </p>
+        <div className="build-heading">
+          <h3>Playtest 1</h3>
+          <p className="date">
+            December 10th, 2025
+          </p>
+        </div>
         <p>Our most complete version of Forsaken thus far, containing many of the game's core mechanics.</p>
         <a href= "https://drive.google.com/drive/folders/1UcGTUvGiI2ffJNeFSmC3CqwMZQCS4nq-"
         className="button">Download v1.3 (12GB)
@@ -146,11 +146,14 @@ export default function Forsaken() {
           <li>Unzip the download folder.</li>
           <li>Run the executable file (.exe) found within.</li>
         </ol>
+        <h3>
+          Feedback
+        </h3>
         <p>
           We would love to hear your feedback on Forsaken, let us know your thoughts in the form below. 
         </p>
         <a href= "https://docs.google.com/forms/d/e/1FAIpQLSeCGwhd3qtoiCS2CuMAAoW4p568fpfhe4mSgBBxk_AcxJ0QNQ/viewform"
-        className="contact-button">Give Feedback
+        className="button">Give Feedback
         </a>
 
         {/*

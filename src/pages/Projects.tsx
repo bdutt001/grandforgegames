@@ -2,14 +2,14 @@ import React from "react";
 import Forsaken from "../assets/posters/forsaken.jpg";
 import TemporalUrgency from "../assets/posters/project-tu.jpg";
 import Bullet from "../assets/icons/hammer.svg";
+import SectionHeader from "../components/SectionHeader";
 
 export default function Projects() {
     return (
         <main className="main">
-            <h2>
-                <img src={Bullet} className="bullet"></img>
+            <SectionHeader icon={Bullet}>
                 Projects
-            </h2>
+            </SectionHeader>
             <p>
                 All of our projects can be found below.
                 <br/>

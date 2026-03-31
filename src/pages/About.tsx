@@ -17,6 +17,7 @@ import Hazel from "../assets/photos/Olivia_B.jpg";
 import Tavier from "../assets/photos/Tavier_F.jpg";
 import Elhadg from "../assets/photos/Elhadg.jpg";
 import Avery from "../assets/photos/Avery_B.jpg";
+import SectionHeader from "../components/SectionHeader.tsx";
 
 
 
@@ -33,7 +34,7 @@ export default function Team() {
         {
             name: "Nathan Young",
             photoUrl: Nate,
-            roles: ["Programmer"],
+            roles: ["Lead Programmer"],
             links: [
                 { type: "linkedin", url: "https://linkedin.com/in/nathan-young-799965293/" }
             ]
@@ -134,7 +135,7 @@ export default function Team() {
     const allRoles = [...new Set(members.flatMap(m => m.roles))];
 
     const roleGroups: Record<string, string[]> = {
-        Leads: ["Project Lead", "Creative Director", "Lead Artist", "Lead Composer", "Lead Writer"],
+        Leads: ["CEO", "Project Lead", "Creative Director", "Lead Programmer", "Lead Artist", "Lead Composer", "Lead Writer"],
         Programming: ["Programmer", "Web Designer"],
         Art: ["Lead Artist", "Artist", "Visual Design", "Animator"],
         Audio: ["Sound Designer", "Music Producer", "Lead Composer"],
@@ -164,10 +165,9 @@ export default function Team() {
     return (
         <>
             <main className="main">
-                <h2>
-                    <img src={Bullet} className="bullet"></img>
+                <SectionHeader icon={Bullet}>
                     About Us
-                </h2>
+                </SectionHeader>
 
                 <p>
                     Grand Forge Games is an independent game studio founded in 2025.
@@ -185,18 +185,15 @@ export default function Team() {
                 <h3>
                     Location
                 </h3>
-            </main>
-            <div className="map-parent">
-                <div className="map-wrapper">
-                    <Map />
+                <div className="map-parent">
+                    <div className="map-wrapper">
+                        <Map />
+                    </div>
                 </div>
-            </div>
-            <main className="main">
                 <div id="team">
-                    <h2>
-                        <img src={Bullet} className="bullet" alt="bullet"/>
+                    <SectionHeader icon={Bullet}>
                         Meet the Team
-                    </h2>
+                    </SectionHeader>
                     <p>
                         The Grand Forge Games team is comprised of twelve talented members from across the world.
                         Members of our team have competed in several game jams, 
@@ -221,9 +218,12 @@ export default function Team() {
                             </span>
                         ))}
                     </div>
-                    <button onClick={() => setSelectedRoles([])} className="clear-filters">
+                    <button onClick={() => setSelectedRoles([])} className="button clear">
                         Clear Filters
                     </button>
+                    <h3>
+                        Members
+                    </h3>
                     <div className="members">
                         {filteredMembers.map((member) => (
                             <Member

@@ -6,24 +6,28 @@ import Star from "../assets/icons/star.svg";
 import StarHover from "../assets/icons/star-gold.svg";
 import Unreal from "../assets/icons/unreal.svg";
 import UnrealHover from "../assets/icons/unreal-gold.svg";
+import SectionHeader from "../components/SectionHeader";
+
+import ConceptArt1 from "../assets/concept-art/tu-1.jpg";
+import ConceptArt2 from "../assets/concept-art/tu-2.jpg";
+
 
 export default function TemporalUrgency(){
     return (
         <main className="main">
           <div className="game-row">
-            <h2>
-              <img src={Bullet} className="bullet"></img>
-              Project Temporal Urgency
-            </h2>
-            <span className="status">In Development</span>
+            <SectionHeader icon={Bullet}>
+              Temporal Urgency
+            </SectionHeader>
+            <span className="tag-indicator status">In Development</span>
           </div>
       
           <div className="subheading">
             <a
               href=""
-              className="director-button"
+              className="tag-button director"
             >
-              <span className="director-wrapper">
+              <span className="icon-wrapper">
                 <img src={Star} className="icon base"/>
                 <img src={StarHover} className="icon hover"/>
               </span>
@@ -33,32 +37,40 @@ export default function TemporalUrgency(){
             <a
             
               href=""
-              className="engine-button"
+              className="tag-button engine"
             >
-              <span className="engine-wrapper">
+              <span className="icon-wrapper">
                 <img src={Unreal} className="icon base"/>
                 <img src={UnrealHover} className="icon hover"/>
               </span>
               Built in Unreal Engine 5.6 
             </a>
           </div>
+          
           <p>
-            Temporal Urgency is a survival-horror puzzle game currently in development at Grand Forge Games, 
-            <br></br>
-            directed by Elhadg Diouf.
-            <br></br>
-            <br></br>
-            Temporal Urgency is built in Unreal Engine 5.6.
+            Temporal Urgency is a survival-horror puzzle game currently in development at Grand Forge Games.
           </p>
+          <h3>
+            Screenshots
+          </h3>
           <SlideshowTU></SlideshowTU>
-          <p>
+
+
+          <h3>
+            A Clockwork Conspiracy
+          </h3>
+          <div className="tu-description">
+            <p>
             Temporal Urgency is set in a steampunk victorian era,
-            <br></br> 
             where a kidnapped scientist must escape a mysterious environment controlled by a time-manipulating curator.
-            <br></br>
-            <br></br>
             Navigate through corridors, peculiar rooms to uncover the mystery behind it all. 
-          </p>
+            </p>
+            <div className="concept-art-wrapper">
+              <img className="concept-art" src={ConceptArt1}/>
+              <img className="concept-art" src={ConceptArt2}/>
+            </div>
+          </div>
+          
         </main>
     )
 }
