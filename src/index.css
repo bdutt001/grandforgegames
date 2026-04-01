@@ -13,7 +13,8 @@
   --heading-color: #edcd6b;
 
   --primary-text-color: #eeeeee;
-  --secondary-text-color: #92a6b6;
+  --secondary-text-color: #9bb0c1ff;
+  /* --secondary-text-color: #92a6b6; */
   --tertiary-text-color: #697682;
 
   --link-color: #60a5fa;
@@ -257,6 +258,7 @@ NAVIGATION MENU
   position: relative;
 }
 
+
 .nav-item-link,
 .dropdown-toggle {
   font-size: clamp(1.1rem, 2.5vw, 1.75rem);
@@ -386,9 +388,15 @@ NAVIGATION MENU
   
   pointer-events: none;
 
+  border: 2px solid var(--transparent);
+
   right: 0;
   left: auto;
   max-width: 90vw;
+}
+
+.dropdown-menu:hover {
+  border: 2px solid var(--heading-color);
 }
 
 .navbar .dropdown-menu {
@@ -920,6 +928,11 @@ FOOTER
   font-size: 1rem;
   text-decoration: none;
   transition: all 0.2s ease;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 }
 
 .contact-button:hover {
@@ -942,27 +955,20 @@ FOOTER
   background: #ff0000;
 }
 
-.icon-button img {
-  max-width: 50px;
-  width: 100%;
-  max-height: 50px;
-  height: 100%;
-}
-
 .icon-wrapper {
-  position: relative;
-  width: 30px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
+
+  display: grid;
+  place-items: center;
 }
 
 .icon {
   position: absolute;
-  top: 0;
-  left: 0;
-
+  inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: contain; 
+  object-fit: contain;
 }
 
 .icon.base {
@@ -982,7 +988,6 @@ FOOTER
 .icon-button:hover .icon.hover {
   opacity: 1;
 }
-
 
 /*
 ======================
@@ -1469,6 +1474,11 @@ FORSAKEN
   height: auto;
 }
 
+.navbar-home .ms-auto {
+  background-color: transparent !important;
+}
+
+
 /*
 ===============
 MEDIA QUERIES
@@ -1493,11 +1503,21 @@ MEDIA QUERIES
     background-color: var(--background-color);
   }
 
+  .header-home {
+    background-color: transparent;
+  }
+
+  .header-home .header-left {
+    margin-left: 0.5rem;
+  }
+
   .header-left h1 {
     display: none;
   }
 
-  
+  .header-right {
+    margin-right: -1rem;
+  }  
 
   .tagline {
     display: none;
@@ -1533,37 +1553,79 @@ MEDIA QUERIES
     background-color: var(--background-color);
   }
 
+  .navbar-dark .navbar-toggler {
+    border: 2px solid var(--transparent);
+  }
+
+  .navbar-toggler {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
+  .navbar-toggler:focus,
+  .navbar-toggler:active {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
+  .navbar-toggler:focus-visible {
+    box-shadow: 0 0 0 2px var(--heading-color);
+    border-radius: 6px;
+  }
+
   .navbar-dark .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%2392a6b6' stroke-width='2' stroke-linecap='round' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    width: 3rem;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23edcd6b' stroke-width='2' stroke-linecap='round' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
   }
 
   .navbar-dark .navbar-toggler:hover .navbar-toggler-icon {
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23edcd6b' stroke-width='2' stroke-linecap='round' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
   }
 
-  .navbar-collapse {
-    position: absolute;
-    top: 100%;
-    right: -10px;
+  .navbar-collapse.show .navbar-toggler {
+    border: 2px solid var(--transparent);
+  }
 
-    width: fit-content;
-    background: var(--background-color);
-    backdrop-filter: blur(8px);
 
-    padding: 1rem 2rem;
+  .navbar-collapse,
+  .navbar-home .navbar-collapse {
+    position: fixed;           /* key change */
+    top: 0;
+    right: 0;
+
+    height: 100vh;
+    width: min(320px, 40vw);   /* responsive panel width */
+
+    backdrop-filter: blur(12px);
+
+    padding: 2rem 1.5rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    transform: translateX(100%);  /* hidden off screen */
+    transition: transform 0.35s ease;
+
     z-index: 9999;
+  }
 
-    transform: translateX(10px);
-    opacity: 0;
-    transition: all 0.3s ease;
+  .navbar-collapse {
+    background: rgba(11, 11, 11, 0.95);
+  }
+
+  .navbar-home .navbar-collapse {
+    background: rgba(11, 11, 11, 0.6);
   }
 
   .navbar-collapse.show {
-    transform: translateY(0);
-    opacity: 1;
+    transform: translateX(0);  /* slide in */
   }
 
   .navbar-nav {
+    width: 100%;
     align-items: flex-end;
   }
 
@@ -1625,6 +1687,20 @@ MEDIA QUERIES
     margin-top: 0.6rem;
   }
 
+  .nav-close {
+    font-size: 2rem;
+    color: var(--heading-color);
+
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    transition: transform 0.2s ease;
+  }
+
+  .nav-close:hover {
+    transform: scale(1.1);
+  }
 
   .athyria-section {
     grid-template-columns: 1fr;
