@@ -4,6 +4,9 @@ import TemporalUrgency from "../assets/posters/project-tu.jpg";
 import Bullet from "../assets/icons/hammer.svg";
 import SectionHeader from "../components/SectionHeader";
 
+import Play from "../assets/icons/play-gold.svg";
+import PlayHover from "../assets/icons/play-white.svg";
+
 export default function Projects() {
     return (
         <main className="main">
@@ -20,9 +23,20 @@ export default function Projects() {
                             <img src={Forsaken} alt="Forsaken" />
 
                             <div className="game-overlay">
-                            <h3 className="game-title">Forsaken</h3>
-                            <p className="game-status">In Development</p>
-                            <p className="game-date available">Playtest Available</p>
+                                <h3 className="game-title">Forsaken</h3>
+                                <p className="game-status">In Development</p>
+                                <div className="game-release">
+                                    <a 
+                                        href="/forsaken#builds"
+                                        className="tag-button playtest"
+                                    >
+                                        <span className="icon-wrapper available">
+                                            <img src={Play} className="icon base"/>
+                                            <img src={PlayHover} className="icon hover"/>
+                                        </span>
+                                        Playtest Available
+                                    </a>
+                                </div>
                             </div>
                         </a>
                     </div>
@@ -33,7 +47,7 @@ export default function Projects() {
                             <div className="game-overlay">
                             <h3 className="game-title">Temporal Urgency</h3>
                             <p className="game-status">In Development</p>
-                            <p className="game-date unavailable">No Release Announced</p>
+                            {/* <p className="game-date unavailable">No Release Announced</p> */}
                             </div>
                         </a>
                     </div>

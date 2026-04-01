@@ -6,10 +6,18 @@ import linkedinLogoHover from "../assets/icons/linkedin-hover.svg";
 
 import youtubeLogo from "../assets/icons/youtube.svg";
 import youtubeLogoHover from "../assets/icons/youtube-hover.svg";
+import { useLocation } from "react-router-dom";
 
 export default function Footer() {
+  const location = useLocation();
+  const isHome = location.pathname === "/";
+  const isMobile = window.innerWidth < 1000;
+  
+  if (isHome) return null;
+  
+
   return (
-    <div className="footer">
+    <div className={`footer ${isMobile ? "footer-mobile" : ""}`}>
       <div className="footer-left">
         <div className="footer-logo">
           <img src={Logo}></img>

@@ -1,19 +1,19 @@
-import React, {useState} from "react";
+import React from "react";
+import { useLocation } from "react-router-dom";
 import Nav from "./Nav";
 import logo from "../assets/logos/gfg-icon-gold-black.svg";
 
 export default function Header() {
-  const [isOpen, setOpen] = useState(false);
+  const location = useLocation();
+  const isHome = location.pathname === "/";
+
   return (
-    <header className="header">
+    <header className={`header ${isHome ? "header-home" : ""}`}>
       <div className="header-left">
-        <img
-          src = {logo}
-          className = "logo"
-        />
+        <img src={logo} className="logo" />
         <h1>Grand Forge Games</h1>
-        {/* <p className="tagline">Tempering the Fires of Imagination</p> */}
       </div>
+      <h1 className="mobile-title">GFG</h1>
       <div className="header-right">
         <Nav />
       </div>

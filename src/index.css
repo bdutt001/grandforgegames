@@ -6,6 +6,7 @@
 
 :root {
   --background-color: rgb(11,11,11);
+  --transparent: rgba(0,0,0,0);
   --background-translucent: rgba(11, 11, 11, 0.4);
   --shadow-color: rgba(0,0,0,0.7);
 
@@ -183,9 +184,24 @@ HEADER
   max-height: 150px;
 
   top: 0;
-  background: var(--background-translucent);
+  background: var(--transparent);
   backdrop-filter: blur(8px);
   z-index:10000;
+}
+
+.mobile-title {
+  display: none;
+}
+
+.header-home {
+  background: transparent;
+  backdrop-filter: none;
+  position: absolute;
+  width: 100%;
+}
+
+.header-home h1 {
+  display: none;
 }
 
 .header-left {
@@ -248,7 +264,7 @@ NAVIGATION MENU
 
 .nav-item-link {
   display: flex;
-  color: var(--secondary-text-color);
+  color: var(--primary-text-color);
   width: 100%;
   transition: all 0.2s ease;
   text-decoration: none;
@@ -260,7 +276,7 @@ NAVIGATION MENU
   display: flex;
   margin-left: -5px;
   vertical-align: center;
-  color: var(--secondary-text-color);
+  color: var(--primary-text-color);
   transition: all 0.2s ease;
 
   cursor: default;
@@ -398,7 +414,7 @@ NAVIGATION MENU
 */
 
 .dropdown-item {
-  color: var(--secondary-text-color);
+  color: var(--primary-text-color);
   text-align: right;
   font-size: 1.5rem;
 
@@ -413,7 +429,7 @@ NAVIGATION MENU
 }
 
 .nav-dropdown-link {
-  color: var(--secondary-text-color);
+  color: var(--primary-text-color);
 }
 
 .nav-dropdown-link:hover {
@@ -479,7 +495,6 @@ GAME CARDS
   content: "";
   position: absolute;
   inset: 0;
-  /* background: rgba(0,0,0,0); */
   transition: background 0.3s ease;
   z-index: 1;
 }
@@ -544,6 +559,47 @@ GAME CARDS
   backdrop-filter: blur(4px);
 }
 
+.tag-button.playtest {
+  color: var(--heading-color);
+  background-color: transparent;
+  border: 2px solid var(--heading-color);
+  border-radius: 999px;
+
+  height: 2.4lh;
+  width: fit-content;
+
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;     
+  justify-content: left;
+  border-radius: 999px; 
+
+  font-weight: 500;
+
+  margin-bottom: 5px;
+  
+  transition: transform 0.2s ease, box-shadow 0.15s ease, background 0.15s ease;
+  will-change: transform; 
+
+  padding: clamp(6px, 1vw, 10px) clamp(10px, 1.5vw, 14px);
+  font-size: clamp(1rem, 1.2vw, 1rem);
+}
+
+.tag-button.playtest img {
+  transform: scale(.7) translateY(1px);
+}
+
+.tag-button.playtest:hover {
+  color: var(--primary-text-color);
+  background-color: var(--accent-color);
+
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+
+  border: 2px solid var(--accent-color);
+
+  transform: scale(1.05);
+}
+
 .game-title {
   color: var(--heading-color);
 
@@ -552,7 +608,6 @@ GAME CARDS
   margin-bottom: 5px;
   text-shadow: 0px 0px 20px var(--shadow-color);
 }
-
 
 .game-title::after {
   content: "";
@@ -614,6 +669,11 @@ GAME CARDS
   border: 2px solid #ec4545;
 }
 
+.game-release {
+  display: flex;
+  flex-direction: row;
+}
+
 
 /* 
 ======================
@@ -621,13 +681,7 @@ SLIDESHOWS
 ======================
 */
 
-/* .slideshow {
-  max-width: 60vw;
-  margin: 0 auto;
-} */
-
 .slideshow {
-  /* max-width: min(1200px, 90vw); */
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -938,7 +992,7 @@ HERO BANNER
 
 .hero {
   position: relative;
-  height: min(90vh, 800px);
+  height: 100vh;
   padding: 1rem;
   min-height: 500px;
 
@@ -1222,7 +1276,6 @@ MEMBERS LIST
   padding: .4rem .8rem;
 
   border: none;
-  /* border: solid .1rem var(--button-border-color); */
  
   transition: all 0.2s ease;
 }
@@ -1265,6 +1318,7 @@ PROJECT INFO
 
 .tag-button {
   display: inline-flex;
+  flex-direction: row;
   line-height: 1;    
   align-items: center;     
   justify-content: center;
@@ -1301,12 +1355,13 @@ PROJECT INFO
 
   border-radius: 999px;
   padding: clamp(6px, 1vw, 10px) clamp(10px, 1.5vw, 14px);
+  font-size: clamp(1rem, 1.2vw, 1rem);
 
   background: rgba(194, 65, 12, 0.15);
   border: 2px solid var(--accent-color);
 
   color: var(--accent-text-color);
-  font-size: clamp(1rem, 1.2vw, 1rem);
+  
   font-weight: 500;
 }
 
@@ -1325,20 +1380,24 @@ PROJECT INFO
   position: relative;
   width: clamp(18px, 1.5vw, 24px);
   height: clamp(18px, 1.5vw, 24px);
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
 }
 
 .icon-wrapper img {
-  /* position: absolute;
-  inset: 0; */
   display: block;
   height: 100%;
   width: auto;
   object-fit: contain;
   transition: opacity 0.2s ease;
 }
+
+
+.playtest img {
+  transform: scale(.2) translateY(1px);
+}
+
 
 .release img {
   transform: scale(.75) translateY(1px);
@@ -1360,65 +1419,6 @@ PROJECT INFO
   opacity: 1;
 }
 
-/* .release-wrapper,
-.director-wrapper,
-.engine-wrapper {
-  position: relative;
-
-  width: clamp(18px, 1.5vw, 24px);
-  height: clamp(18px, 1.5vw, 24px);
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  flex: 0 0 auto;
-} */
-
-/* .status,
-.director-button,
-.engine-button,
-.release-button {
-  display: inline-flex;    
-  align-items: center;     
-  justify-content: center;
-  border-radius: 999px; 
-  
-  gap: 5px;
-  padding: 0px 14px;                
-  font-size: 1.25rem;
-  font-weight: 500;
-  letter-spacing: 0.3px;
-
-  width: fit-content;
-  height: 40px;
-  flex: 0 0 auto;
-  white-space: nowrap;
-
-  transition: all 0.2s ease;
-  cursor: default;
-} */
-
-/* .status {
-  padding: 6px 14px;
-  border-radius: 999px;
-} */
-
-/* .director-button img {
-  width: 25px;
-  margin-right: 10px;
-}
-
-.engine-button img {
-  width: 30px;
-  margin-right: 10px;
-}
-
-.release-button img {
-  width: 18px;
-  margin-right: 7px;
-  margin-left: 2px;
-} */
 
 /*
 =================
@@ -1438,17 +1438,11 @@ FORSAKEN
 }
 
 .forsaken-map {
-  /* flex: 1;
-  display: flex; */
   display: grid;
   place-items: center;
 
   align-self: center;
   justify-self: center;
-
-  /* margin-bottom: 20px;
-  margin-top: 20px;
-  margin-left: 20px; */
 }
 
 .forsaken-map img{
@@ -1483,13 +1477,27 @@ MEDIA QUERIES
 
 @media (max-width: 1000px) {
 
+  .mobile-title {
+    display: flex;
+  }
+  
   h2 {
     text-wrap: nowrap;
   }
 
-  .header-left {
-    gap: 1rem;
+  .logo {
+    width: 5rem;
   }
+
+  .header {
+    background-color: var(--background-color);
+  }
+
+  .header-left h1 {
+    display: none;
+  }
+
+  
 
   .tagline {
     display: none;
@@ -1514,6 +1522,17 @@ MEDIA QUERIES
     width: 100%;
   }
 
+  .game-overlay p,
+  .game-overlay h3,
+  .game-overlay a,
+  .game-overlay div {
+    display: none;
+  }
+
+  .ms-auto {
+    background-color: var(--background-color);
+  }
+
   .navbar-dark .navbar-toggler-icon {
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%2392a6b6' stroke-width='2' stroke-linecap='round' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
   }
@@ -1528,13 +1547,13 @@ MEDIA QUERIES
     right: -10px;
 
     width: fit-content;
-    background: var(--background-translucent);
+    background: var(--background-color);
     backdrop-filter: blur(8px);
 
     padding: 1rem 2rem;
     z-index: 9999;
 
-    transform: translateY(-10px);
+    transform: translateX(10px);
     opacity: 0;
     transition: all 0.3s ease;
   }
@@ -1545,7 +1564,7 @@ MEDIA QUERIES
   }
 
   .navbar-nav {
-    align-items: flex-end; 
+    align-items: flex-end;
   }
 
   .nav-item-link {
@@ -1580,6 +1599,10 @@ MEDIA QUERIES
     transform: rotate(180deg);
   }
 
+  .copyright {
+    display: none;
+  }
+
   .mobile-submenu {
     max-height: 0;
     overflow: hidden;
@@ -1587,7 +1610,8 @@ MEDIA QUERIES
   }
 
   .mobile-submenu.open {
-    max-height: 200px;
+    max-height: fit-content;
+    gap: 10rem;
   }
 
   .mobile-submenu a {
@@ -1595,6 +1619,12 @@ MEDIA QUERIES
     padding-right: 1rem;
     font-size: 1rem;
   }
+
+  .dropdown-item {
+    text-wrap: nowrap;
+    margin-top: 0.6rem;
+  }
+
 
   .athyria-section {
     grid-template-columns: 1fr;

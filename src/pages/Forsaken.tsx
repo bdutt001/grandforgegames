@@ -125,11 +125,15 @@ export default function Forsaken() {
           Download
         </SectionHeader>
         <p>
-           
+          To run the build:
         </p>
-        
+        <ol>
+          <li>Download the most recent build using the button below.</li>
+          <li>Unzip the download folder.</li>
+          <li>Run the executable file (.exe) found within.</li>
+        </ol>
         <div className="build-heading">
-          <h3>Playtest 1</h3>
+          <h3>Version 1.3</h3>
           <p className="date">
             December 10th, 2025
           </p>
@@ -138,14 +142,7 @@ export default function Forsaken() {
         <a href= "https://drive.google.com/drive/folders/1UcGTUvGiI2ffJNeFSmC3CqwMZQCS4nq-"
         className="button">Download v1.3 (12GB)
         </a>
-        <p>
-          To run the build:
-        </p>
-        <ol>
-          <li>Download the most recent build using the button below.</li>
-          <li>Unzip the download folder.</li>
-          <li>Run the executable file (.exe) found within.</li>
-        </ol>
+        
         <h3>
           Feedback
         </h3>
