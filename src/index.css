@@ -1479,13 +1479,21 @@ FORSAKEN
 }
 
 
+
+
 /*
 ===============
 MEDIA QUERIES
 ===============
 */
 
-@media (max-width: 1000px) {
+@media (min-width: 1000px) {
+  .nav-close {
+    display: none;
+  }
+}
+
+@media (max-width: 999px) {
 
   .mobile-title {
     display: flex;
@@ -1500,7 +1508,7 @@ MEDIA QUERIES
   }
 
   .header {
-    background-color: var(--background-color);
+    background-color: var(--background-translucent);
   }
 
   .header-home {
@@ -1678,13 +1686,12 @@ MEDIA QUERIES
 
   .mobile-submenu a {
     display: block;
-    padding-right: 1rem;
-    font-size: 1rem;
+    padding-right: 1.2rem;
+    font-size: 1.1rem;
   }
 
   .dropdown-item {
-    text-wrap: nowrap;
-    margin-top: 0.6rem;
+    margin-top: .75rem;
   }
 
   .nav-close {
