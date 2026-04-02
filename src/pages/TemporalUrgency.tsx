@@ -1,4 +1,7 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import { scrollToElement } from "../utils/scrollHelpers";
+
 import Bullet from "../assets/icons/hammer.svg";
 import SlideshowTU from "../components/SlideshowTU";
 
@@ -11,9 +14,20 @@ import SectionHeader from "../components/SectionHeader";
 import ConceptArt1 from "../assets/concept-art/tu-1.jpg";
 import ConceptArt2 from "../assets/concept-art/tu-2.jpg";
 
-
 export default function TemporalUrgency(){
-    return (
+  const navigate = useNavigate();
+  const navigateToTeam = () => {
+    navigate({
+      pathname: "/about",
+      hash: "#team"
+    });
+
+    setTimeout(() => {
+      scrollToElement("team");
+    }, 100);
+  };  
+
+  return (
         <main className="main">
           <div className="game-row">
             <SectionHeader icon={Bullet}>
@@ -24,7 +38,7 @@ export default function TemporalUrgency(){
       
           <div className="subheading">
             <a
-              href=""
+              onClick={() => navigateToTeam()}
               className="tag-button director"
             >
               <span className="icon-wrapper">
@@ -36,7 +50,7 @@ export default function TemporalUrgency(){
     
             <a
             
-              href=""
+              href="https://unrealengine.com/en-US/news/unreal-engine-5-6-is-now-available"
               className="tag-button engine"
             >
               <span className="icon-wrapper">
