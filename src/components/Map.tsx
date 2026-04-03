@@ -106,7 +106,7 @@ export default function HQMap() {
       ref={containerRef}
       style={{
         width: "100%",
-        maxWidth: "60vw",
+        maxWidth: "80vw",
         height: "40vh",
         margin: "0 auto",
         position: "relative",

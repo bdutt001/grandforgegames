@@ -14,6 +14,8 @@ import UnrealHover from "../assets/icons/unreal-gold.svg";
 
 import SectionHeader from "../components/SectionHeader";
 
+import Thumbnail from "../assets/slideshow/2-agismeyra.png"
+
 export default function Forsaken() {
   const navigate = useNavigate();
 
@@ -73,13 +75,6 @@ export default function Forsaken() {
         </a>
       </div>
       <p>
-          {/* Forsaken features:
-          <ul>
-            <li>a diverse, open-world map that rewards exploration.</li>
-            <li>a wealth of weapons and armor to be acquired.</li>
-            <li>a rich combat system including melee weapons, ranged weapons and spells.</li>
-            <li>several NPCs whose stories are told through engaging questlines.</li>
-          </ul> */}
           Forsaken is a single-player, open-world action RPG centered around visceral combat, exploration, and meaningful player choice.
           Development for Forsaken began in 2025 and is still ongoing,
           but you can download our latest build or playtest  <a href= "./forsaken#builds" >here.</a>
@@ -89,7 +84,7 @@ export default function Forsaken() {
       </h3>
       <Slideshow></Slideshow>
 
-      <p>More coming soon!</p>
+      {/* <p>More coming soon!</p> */}
       
       {/* <p className="quote">
          We were born of change. It is our nature to change the world around us, holding on to what little we have left of ourselves. 
@@ -107,9 +102,25 @@ export default function Forsaken() {
         </p>
         <img className="forsaken-map" src="/WorldMap.png"/>
       </div>
-      <h3> 
-        More
-      </h3>
+      <h3>Epic Grants Video Submission</h3>
+      <div className="pitch-video">
+        {/* <video
+          poster={Thumbnail}
+          controls
+          preload="metadata"
+          playsInline
+        >
+          <source src="https://www.youtube.com/watch?v=88ctGLANEG0" />
+        </video> */}
+        <iframe
+          src="https://www.youtube.com/embed/88ctGLANEG0"
+          title="Pitch Video"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+      </div>
+      <h3>More</h3>
       <p>
         Our artists are creating a wealth of unique weapons, armor, and items to collect.
 

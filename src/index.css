@@ -153,6 +153,19 @@ a:hover {
   flex-direction: column;
 }
 
+iframe {
+  width: 80%;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  background: var(--background-color);
+}
+
+.pitch-video {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
 /*
 ======================
 BUTTONS
@@ -743,6 +756,20 @@ SLIDESHOWS
   justify-content: center;
   align-items: center;
   overflow: hidden;
+@keyframes slowZoom {
+  from {transform: scale(1)}
+  to {transform: scale(1.05)}
+}
+}
+
+.sprite-placeholder {
+  width: 50%;
+  aspect-ratio: 1/1;
+  background: var(--background-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
   position: relative;
 }
 
@@ -803,7 +830,7 @@ SLIDESHOWS
   transition: opacity 0.3s ease;
 
   margin-top: 1rem;
-  font-size: clamp(16px, 1vw, 24px);
+  font-size: clamp(14px, 1vw, 18px);
 }
 
 .fade-out + .caption {
@@ -1129,11 +1156,12 @@ MEMBERS GRID
 
 .members {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
   gap: 20px;
 
   position: relative;
   transition: all 0.3s ease;
+  place-items: center;
 }
 
 /*
@@ -1149,8 +1177,8 @@ CARD BASE
   position: relative;
   z-index: 1;
 
-  width: 280px;
-  height: 280px;
+  width: 330px;
+  height: fit-content;
 
   border-radius: 16px;
   padding: 16px;
@@ -1189,9 +1217,9 @@ EXPANDED STATE (CLICK / ACTIVE)
 */
 
 .team-member-card.expanded {
-  width: 420px;
+  width: 400px;
   height: auto;  
-  min-height: 420px;
+  min-height: fit-content;
 
   overflow: visible;
 
@@ -1301,7 +1329,7 @@ INFO SECTION (ALWAYS VISIBLE)
 
 .member-roles {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
   gap: 0.5rem;
 }
@@ -1313,6 +1341,7 @@ INFO SECTION (ALWAYS VISIBLE)
   border: 2px solid var(--button-border-color);
   border-radius: 999px;
 
+  text-wrap: nowrap;
   font-size: 0.85rem;
   padding: 4px 10px;
   font-weight: 600;
@@ -1836,7 +1865,7 @@ MEDIA QUERIES
   .mobile-submenu a {
     display: block;
     padding-right: 1.2rem;
-    font-size: 1.1rem;
+    font-size: clamp(1.1rem, 2.5vw, 1.75rem);
   }
 
   .dropdown-item {
@@ -1888,4 +1917,13 @@ MEDIA QUERIES
     text-wrap: nowrap;
   }
 
+  .team-member-card.expanded {
+    width: 80vw;
+    height: auto;  
+    min-height: fit-content;
+  }
+
+  .map-parent {
+    place-items: center;
+  }
 }
