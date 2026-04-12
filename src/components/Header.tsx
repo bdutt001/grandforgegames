@@ -8,7 +8,7 @@ export default function Header() {
   const isHome = location.pathname === "/";
 
   return (
-    <header className={`header ${isHome ? "header-home" : ""}`}>
+    <header className={`header ${isHome ? "header-home" : "header-other"}`}>
       <div className="header-left">
         <img src={logo} className="logo" />
         <h1>Grand Forge Games</h1>

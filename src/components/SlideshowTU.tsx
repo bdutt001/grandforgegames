@@ -85,34 +85,14 @@ export default function SlideshowTU() {
 
         <button
           onClick={prevSlide}
-          style={{
-            position: "absolute",
-            left: 10,
-            top: "50%",
-            transform: "translateY(-50%)",
-            background: "rgba(0,0,0,0.5)",
-            color: "white",
-            border: "none",
-            padding: "0.5rem 1rem",
-            cursor: "pointer",
-          }}
+          className="slide-arrow prev"
         >
           ‹
         </button>
 
         <button
           onClick={nextSlide}
-          style={{
-            position: "absolute",
-            right: 10,
-            top: "50%",
-            transform: "translateY(-50%)",
-            background: "rgba(0,0,0,0.5)",
-            color: "white",
-            border: "none",
-            padding: "0.5rem 1rem",
-            cursor: "pointer",
-          }}
+          className="slide-arrow next"
         >
           ›
         </button>

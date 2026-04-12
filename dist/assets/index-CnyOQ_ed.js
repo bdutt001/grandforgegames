@@ -32,7 +32,7 @@ Please change the parent <Route path="${J}"> to <Route path="${J==="/"?"*":`${J}
                 height:85px;
                 object-fit:contain;
               " />
-             </div>`,iconSize:[0,0],iconAnchor:[0,0]});return Fl.marker(p,{icon:_}).addTo(m),s.current=m,requestAnimationFrame(()=>{m.invalidateSize(),m.setView(p,10)}),()=>{m.remove(),s.current=null}},[c]),O.jsx("div",{ref:r,style:{width:"100%",maxWidth:"60vw",height:"40vh",margin:"0 auto",position:"relative",borderRadius:"16px",overflow:"hidden"},children:O.jsx("style",{children:`
+             </div>`,iconSize:[0,0],iconAnchor:[0,0]});return Fl.marker(p,{icon:_}).addTo(m),s.current=m,requestAnimationFrame(()=>{m.invalidateSize(),m.setView(p,10)}),()=>{m.remove(),s.current=null}},[c]),O.jsx("div",{ref:r,style:{width:"100%",maxWidth:"80vw",height:"40vh",margin:"0 auto",position:"relative",borderRadius:"16px",overflow:"hidden"},children:O.jsx("style",{children:`
         @keyframes pulse {
           0% { transform: scale(0.8); opacity: 0.7; }
           70% { transform: scale(2.2); opacity: 0; }
