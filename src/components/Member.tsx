@@ -1,15 +1,31 @@
 import React from "react";
 
-import linkedinIcon from "../assets/logos/linkedin.svg";
-import githubIcon from "../assets/logos/github.svg";
-import artstationIcon from "../assets/icons/artstation.svg";
-import googlesitesIcon from "../assets/icons/googlesites.svg";
+import linkedinLogo from "../assets/icons/linkedin.svg";
+import linkedinLogoHover from "../assets/icons/linkedin-hover.svg";
+import githubLogo from "../assets/icons/github.svg";
+import githubLogoHover from "../assets/icons/github-hover.svg";
+import artstationLogo from "../assets/icons/artstation.svg";
+import artstationLogoHover from "../assets/icons/artstation-hover.svg"
+import googlesitesLogo from "../assets/icons/googlesites.svg";
+import googlesitesLogoHover from "../assets/icons/googlesites-hover.svg";
+import mailLogo from "../assets/icons/email.svg";
+import mailLogoHover from "../assets/icons/email-hover.svg";
+
 
 const iconMap: Record<string, string> = {
-  linkedin: linkedinIcon,
-  github: githubIcon,
-  artstation: artstationIcon,
-  googlesites: googlesitesIcon,
+  Mail: mailLogo,
+  LinkedIn: linkedinLogo,
+  GitHub: githubLogo,
+  ArtStation: artstationLogo,
+  Portfolio: googlesitesLogo,
+};
+
+const hoverIconMap: Record<string, string> = {
+  Mail: mailLogoHover,
+  LinkedIn: linkedinLogoHover,
+  GitHub: githubLogoHover,
+  ArtStation: artstationLogoHover,
+  Portfolio: googlesitesLogoHover,
 };
 
 type MemberType = {
@@ -17,9 +33,12 @@ type MemberType = {
   name: string;
   photoUrl: string;
   roles: string[];
-  projects: string[];
+  projects: {
+    name: string;
+    url: string;
+  }[];
   bio?: string;
-  links: {
+  links?: {
     type: string;
     url: string;
   }[];
@@ -84,41 +103,67 @@ const TeamMemberCard: React.FC<Props> = ({
                   </span>
                 ))}
             </div>
-            <p>
+            <p className="member-extra">
               Projects
             </p>
             <div className="member-projects">
                 {member.projects.map((project) => (
-                  <span key={project} className="project-badge">
-                    {project}
-                  </span>
+                  <a 
+                    key={project.name}
+                    href={project.url}
+                    className="project-badge"
+                  >
+                    <span key={project.name}>
+                      {project.name}
+                    </span>
+                  </a>
                 ))}
             </div>
           </div>
         </div>
-
+        
+        {(member.bio || member.links) && (
+            <div className="member-divider"/>
+        )}
+  
         <div className="member-extra">
           {member.bio && (
-            <p className="member-bio">
-              {member.bio}
-            </p>
+            <div>
+              <p className="member-subheading">
+                Bio
+              </p>
+              <p className="member-bio">
+                {member.bio}
+              </p>
+            </div>
           )}
 
-          <div className="member-links">
-            {member.links.map((link) => (
-              <a
-                key={link.type}
-                href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="icon-button-member"
-              >
-                <img src={iconMap[link.type]} alt={link.type} />
-              </a>
-            ))}
-          </div>
-        </div>
+          {member.links && (
+            <div>
+              <p className="member-subheading">
+                    Links
+              </p>
+              <div className="member-links">
 
+                {member.links.map((link) => (
+                  <a
+                    key={link.type}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="footer-button member"
+                  >
+                    <span className="icon-wrapper">
+                      <img src={iconMap[link.type]} className="icon base" alt={link.type} />
+                      <img src={hoverIconMap[link.type]} className="icon hover" alt={link.type} />
+                    </span>
+                    {link.type}
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

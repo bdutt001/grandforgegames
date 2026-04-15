@@ -40,9 +40,12 @@ export default function Team() {
       roles: ["CEO",
         "Programmer"
       ],
-      projects: ["Forsaken", "Temporal Urgency"],
+      projects: [
+        {name: "Forsaken", url: "/forsaken"},
+        {name: "Temporal Urgency", url:"/temporal-urgency"},
+      ],
       links: [
-        { type: "linkedin", url: "https://linkedin.com/in/nicholas-scherer-6273a62aa/" }
+        { type: "LinkedIn", url: "https://linkedin.com/in/nicholas-scherer-6273a62aa/" }
       ]
     },
     {
@@ -50,9 +53,12 @@ export default function Team() {
       name: "William Latimer",
       photoUrl: Billiam,
       roles: ["Creative Director", "Lead Composer"],
-      projects: ["Forsaken", "Temporal Urgency"],
+      projects: [
+        {name: "Forsaken", url: "/forsaken"},
+        {name: "Temporal Urgency", url:"/temporal-urgency"},
+      ],
       links: [
-        { type: "linkedin", url: "https://linkedin.com/in/wiliam-latimer-08687a395/" }
+        { type: "LinkedIn", url: "https://linkedin.com/in/wiliam-latimer-08687a395/" }
       ]
     },
     {
@@ -60,9 +66,11 @@ export default function Team() {
       name: "Nathan Young",
       photoUrl: Nate,
       roles: ["Lead Programmer"],
-      projects: ["Forsaken"],
+      projects: [
+        {name: "Forsaken", url: "/forsaken"},
+      ],
       links: [
-        { type: "linkedin", url: "https://linkedin.com/in/nathan-young-799965293/" }
+        { type: "LinkedIn", url: "https://linkedin.com/in/nathan-young-799965293/" }
       ]
     },
     {
@@ -70,10 +78,13 @@ export default function Team() {
       name: "Cole Reese",
       photoUrl: Col,
       roles: ["Lead Artist", "Visual Design"],
-      projects: ["Forsaken", "Temporal Urgency"],
+      projects: [
+        {name: "Forsaken", url: "/forsaken"},
+        {name: "Temporal Urgency", url:"/temporal-urgency"},
+      ],
       links: [
-        { type: "linkedin", url: "https://linkedin.com/in/colereese/" },
-        { type: "artstation", url: "https://relocsart.artstation.com/" }
+        { type: "LinkedIn", url: "https://linkedin.com/in/colereese/" },
+        { type: "ArtStation", url: "https://relocsart.artstation.com/" }
       ]
     },
     {
@@ -81,19 +92,24 @@ export default function Team() {
       name: "Hazel Bradford",
       photoUrl: Hazel,
       roles: ["Lead Writer"],
-      projects: ["Forsaken", "Temporal Urgency"],
-      links: []
+      projects: [
+        {name: "Forsaken", url: "/forsaken"},
+        {name: "Temporal Urgency", url:"/temporal-urgency"},
+      ],
     },
     {
       id: 3,
       name: "Ben Dutton",
       photoUrl: Ben,
       roles: ["Programmer", "Web Designer"],
-      projects: ["Forsaken"],
+      projects: [
+        {name: "Forsaken", url: "/forsaken"},
+      ],
       bio: "Website designer and developer",
       links: [
-        { type: "linkedin", url: "https://linkedin.com/in/benjamin-dutton-a557343a5" },
-        { type: "github", url: "https://github.com/bdutt001" }
+        { type: "Mail", url:"mailto:bendutton9@gmail.com" },
+        { type: "LinkedIn", url: "https://linkedin.com/in/benjamin-dutton-a557343a5" },
+        { type: "GitHub", url: "https://github.com/bdutt001" }
       ]
     },
     {
@@ -101,9 +117,12 @@ export default function Team() {
       name: "Elhadg Diouf",
       photoUrl: Elhadg,
       roles: ["Sound Designer", "Composer"],
-      projects: ["Forsaken", "Temporal Urgency"],
+      projects: [
+        {name: "Forsaken", url: "/forsaken"},
+        {name: "Temporal Urgency", url:"temporal-urgency"},
+      ],
       links: [
-        { type: "linkedin", url: "https://linkedin.com/in/elhadg-diouf/" }
+        { type: "LinkedIn", url: "https://linkedin.com/in/elhadg-diouf/" }
       ]
     },
     {
@@ -111,9 +130,12 @@ export default function Team() {
       name: "Tavier Futrell",
       photoUrl: Tavier,
       roles: ["Animator", "Visual Design"],
-      projects: ["Forsaken", "Temporal Urgency"],
+      projects: [
+        {name: "Forsaken", url: "/forsaken"},
+        {name: "Temporal Urgency", url:"/temporal-urgency"},
+      ],
       links: [
-        { type: "linkedin", url: "https://linkedin.com/in/tavier-futrell-8a97442ba/" }
+        { type: "LinkedIn", url: "https://linkedin.com/in/tavier-futrell-8a97442ba/" }
       ]
     },
     {
@@ -121,9 +143,11 @@ export default function Team() {
       name: "Leonardo Evangelisti",
       photoUrl: Leo,
       roles: ["Visual Design"],
-      projects: ["Forsaken"],
+      projects: [
+        {name: "Forsaken", url: "/forsaken"},
+      ],
       links: [
-        { type: "linkedin", url: "https://www.linkedin.com/in/leonardo-evangelisti-56677a15b/" }
+        { type: "LinkedIn", url: "https://www.linkedin.com/in/leonardo-evangelisti-56677a15b/" }
       ]
     },
     {
@@ -131,10 +155,12 @@ export default function Team() {
       name: "Avery Baker",
       photoUrl: Avery,
       roles: ["Programmer"],
-      projects: ["Forsaken"],
+      projects: [
+        {name: "Forsaken", url: "/forsaken"},
+      ],
       links: [
-        { type: "linkedin", url: "https://www.linkedin.com/in/averybaker4519/" },
-        { type: "googlesites", url: "https://sites.google.com/view/averybakerportfolio/games" }
+        { type: "LinkedIn", url: "https://www.linkedin.com/in/averybaker4519/" },
+        { type: "Portfolio", url: "https://sites.google.com/view/averybakerportfolio/games" }
       ]
     },
     {
@@ -142,24 +168,28 @@ export default function Team() {
       name: "Alex Huang",
       photoUrl: Alex,
       roles: ["Writer"],
-      projects: ["Forsaken"],
-      links: []
+      projects: [
+        {name: "Forsaken", url: "/forsaken"},
+      ],
     },
     {
       id: 10,
       name: "Shavon Taylor",
       photoUrl: Placeholder,
       roles: ["Visual Design"],
-      projects: ["Forsaken", "Temporal Urgency"],
-      links: []
+      projects: [
+        {name: "Forsaken", url: "/forsaken"},
+        {name: "Temporal Urgency", url:"/temporal-urgency"},
+      ],
     },
     {
       id: 12,
       name: "Jacob Carrasquillo",
       photoUrl: Placeholder,
       roles: ["Writer"],
-      projects: ["Forsaken"],
-      links: []
+      projects: [
+        {name: "Forsaken", url: "/forsaken"},
+      ],
     },
   ];
 
@@ -171,7 +201,7 @@ export default function Team() {
     Writing: ["Lead Writer", "Writer"]
   };
 
-  const allProjects = ["Forsaken", "Temporal Urgency"];
+  const allProjects = [{name: "Forsaken", url: "/forsaken"}, {name: "Temporal Urgency", url:"/temporal-urgency"}];
 
   const allTags = Object.keys(roleGroups);
 
@@ -184,12 +214,12 @@ export default function Team() {
   };
 
   const toggleProject = (project: string) => {
-  setSelectedProjects(prev =>
-    prev.includes(project)
-      ? prev.filter(p => p !== project)
-      : [...prev, project]
-  );
-};
+    setSelectedProjects(prev =>
+      prev.includes(project)
+        ? prev.filter(p => p !== project)
+        : [...prev, project]
+    );
+  };
 
   const filteredMembers = members.filter(member => {
     const roleMatch =
@@ -202,8 +232,8 @@ export default function Team() {
 
     const projectMatch =
       selectedProjects.length === 0 ||
-      selectedProjects.some(project =>
-        member.projects.includes(project)
+      selectedProjects.some(selectedProject =>
+        member.projects.some(p => p.name === selectedProject)
       );
 
     return roleMatch && projectMatch;
@@ -312,7 +342,7 @@ export default function Team() {
         </p>
         <h3>Members</h3>
         <p className="tertiary-text">
-          Filter based on departments and leadership positions.
+          Filter based on leadership positions, departments, and projects.
         </p>
         <div className="role-filters">
           {allTags.map(tag => (
@@ -329,11 +359,11 @@ export default function Team() {
 
           {allProjects.map(project => (
             <span
-              key={project}
-              className={`filter-tag project ${selectedProjects.includes(project) ? "active" : ""}`}
-              onClick={() => toggleProject(project)}
+              key={project.name}
+              className={`filter-tag project ${selectedProjects.includes(project.name) ? "active" : ""}`}
+              onClick={() => toggleProject(project.name)}
             >
-              {project}
+              {project.name}
             </span>
           ))}
         </div>

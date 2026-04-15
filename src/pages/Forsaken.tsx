@@ -191,7 +191,7 @@ export default function Forsaken() {
               <SpriteSlideshow/>
               <br/>
             </p>
-            <div id="builds">
+            <div id="builds" className="builds">
               <SectionHeader icon={Bullet}>
                 Builds
               </SectionHeader>
