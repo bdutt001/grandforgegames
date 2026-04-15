@@ -1,7 +1,7 @@
 import React from "react";
 import Forsaken from "../assets/posters/forsaken.jpg";
 import TemporalUrgency from "../assets/posters/project-tu.jpg";
-import Bullet from "../assets/icons/hammer.svg";
+import Bullet from "../assets/logos/gfg-icon-gold.svg";
 import SectionHeader from "../components/SectionHeader";
 
 import Play from "../assets/icons/play-gold.svg";

@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { scrollToElement } from "../utils/scrollHelpers";
 
-import Bullet from "../assets/icons/hammer.svg";
+import Bullet from "../assets/logos/gfg-icon-gold.svg";
 import SlideshowTU from "../components/SlideshowTU";
 
 import Star from "../assets/icons/star.svg";
@@ -113,7 +113,9 @@ export default function TemporalUrgency(){
             className={`game-content ${expanded ? "open" : ""}`}
           >
             <h3>Slideshow</h3>
-
+            <p className="secondary-text">
+              All images captured within Unreal Engine.
+            </p>
             <div className="slideshow-wrapper">
               <SlideshowTU />
             </div>

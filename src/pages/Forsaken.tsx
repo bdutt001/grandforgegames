@@ -1,10 +1,14 @@
-import {Navigate, useNavigate} from "react-router-dom";
+import {Navigate, useLocation, useNavigate} from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
 import { scrollToElement } from "../utils/scrollHelpers";
+
+import SectionHeader from "../components/SectionHeader";
 
 import Slideshow from "../components/Slideshow";
 import SpriteSlideshow from "../components/SpriteSlideshow";
 
-import Bullet from "../assets/icons/hammer.svg";
+import Bullet from "../assets/logos/gfg-icon-gold.svg";
+
 import Play from "../assets/icons/play.svg";
 import PlayHover from "../assets/icons/play-gold.svg";
 import Star from "../assets/icons/star.svg";
@@ -12,13 +16,14 @@ import StarHover from "../assets/icons/star-gold.svg";
 import Unreal from "../assets/icons/unreal.svg";
 import UnrealHover from "../assets/icons/unreal-gold.svg";
 
-import SectionHeader from "../components/SectionHeader";
-
-import Thumbnail from "../assets/slideshow/2-agismeyra.png"
-import { useEffect, useRef, useState } from "react";
 
 export default function Forsaken() {
   const navigate = useNavigate();
+  const contentRef = useRef<HTMLDivElement | null>(null);
+  const [expanded, setExpanded] = useState(false);
+  const prevExpanded = useRef(false);
+  const topRef = useRef<HTMLDivElement | null>(null);
+  const location = useLocation();
 
   const navigateToTeam = () => {
     navigate({
@@ -31,10 +36,26 @@ export default function Forsaken() {
     }, 100);
   };
 
-  const contentRef = useRef<HTMLDivElement | null>(null);
-  const [expanded, setExpanded] = useState(false);
-  const prevExpanded = useRef(false);
-  const topRef = useRef<HTMLDivElement | null>(null);
+  const navigateToBuild = () => {
+    setExpanded(true);
+    navigate({
+      pathname: "/forsaken",
+      hash: "#builds"
+    })
+    setTimeout(() => {
+      scrollToElement("builds");
+    }, 100);
+  }
+
+  useEffect(() => {
+    if (location.hash === "#builds") {
+      setExpanded(true);
+
+      setTimeout(() => {
+        scrollToElement("builds");
+      }, 300);
+    }
+  }, [location]);
 
   useEffect(() => {
     if (!expanded && prevExpanded.current) {
@@ -52,7 +73,7 @@ export default function Forsaken() {
 
   return (
     <div className="game-page game-background forsaken">
-      <main className="main-game">
+      <main className="game-main">
         <section className="game-hero">
           <div className="game-hero-top">
             <div className="game-row">
@@ -67,7 +88,8 @@ export default function Forsaken() {
 
             <div className="subheading">
               <a
-                href="/forsaken#builds"
+                // href="/forsaken#builds"
+                onClick={navigateToBuild}
                 className="tag-button release"
               >
                 <span className="icon-wrapper available">
@@ -132,8 +154,10 @@ export default function Forsaken() {
             className={`game-content ${expanded ? "open" : ""}`}
           >
             <h3>Slideshow</h3>
+            <p className="secondary-text">
+              All images captured within Unreal Engine.
+            </p>
             <Slideshow/>
-            {/* <p>More coming soon!</p> */}
             {/* <p className="quote">
                We were born of change. It is our nature to change the world around us, holding on to what little we have left of ourselves.
             </p> */}
@@ -152,14 +176,6 @@ export default function Forsaken() {
             </div>
             <h3>Epic Grants Video Submission</h3>
             <div className="pitch-video">
-              {/* <video
-                poster={Thumbnail}
-                controls
-                preload="metadata"
-                playsInline
-              >
-                <source src="https://www.youtube.com/watch?v=88ctGLANEG0" />
-              </video> */}
               <iframe
                 src="https://www.youtube.com/embed/88ctGLANEG0"
                 title="Pitch Video"
@@ -177,7 +193,7 @@ export default function Forsaken() {
             </p>
             <div id="builds">
               <SectionHeader icon={Bullet}>
-                Download
+                Builds
               </SectionHeader>
               <p>
                 To run the build:
@@ -187,25 +203,38 @@ export default function Forsaken() {
                 <li>Unzip the download folder.</li>
                 <li>Run the executable file (.exe) found within.</li>
               </ol>
-              <div className="build-heading">
-                <h3>Version 1.3</h3>
-                <p className="date">
-                  December 10th, 2025
-                </p>
+              
+              <div className="build-links">
+                <div className="build-download">
+                  <div className="build-heading">
+                    <h3>Download</h3>
+                    <p className="date">
+                      December 10th, 2025
+                    </p>
+                  </div>
+                  <p>Our most complete version of Forsaken thus far, containing many of the game's core mechanics.</p>
+                  <a
+                    href= "https://drive.google.com/drive/folders/1UcGTUvGiI2ffJNeFSmC3CqwMZQCS4nq-"
+                    className="button"
+                  >
+                    Download v1.3 (12GB)
+                  </a>
+                </div>
+                <div className="build-feedback">
+                  <h3>
+                    Feedback
+                  </h3>
+                  <p>
+                    We would love to hear your feedback on Forsaken, let us know your thoughts in the form below.
+                  </p>
+                  <a
+                    href= "https://docs.google.com/forms/d/e/1FAIpQLSeCGwhd3qtoiCS2CuMAAoW4p568fpfhe4mSgBBxk_AcxJ0QNQ/viewform"
+                    className="button"
+                  >
+                    Give Feedback
+                  </a>
+                </div>
               </div>
-              <p>Our most complete version of Forsaken thus far, containing many of the game's core mechanics.</p>
-              <a href= "https://drive.google.com/drive/folders/1UcGTUvGiI2ffJNeFSmC3CqwMZQCS4nq-"
-              className="button">Download v1.3 (12GB)
-              </a>
-              <h3>
-                Feedback
-              </h3>
-              <p>
-                We would love to hear your feedback on Forsaken, let us know your thoughts in the form below.
-              </p>
-              <a href= "https://docs.google.com/forms/d/e/1FAIpQLSeCGwhd3qtoiCS2CuMAAoW4p568fpfhe4mSgBBxk_AcxJ0QNQ/viewform"
-              className="button">Give Feedback
-              </a>
             </div>
           </section>
         </div>

@@ -17,6 +17,7 @@ type MemberType = {
   name: string;
   photoUrl: string;
   roles: string[];
+  projects: string[];
   bio?: string;
   links: {
     type: string;
@@ -67,20 +68,32 @@ const TeamMemberCard: React.FC<Props> = ({
       <div className="member-inner">
 
         <div className="member-info">
-          <img
-            src={member.photoUrl}
-            alt={member.name}
-            className="member-photo"
-          />
-
-          <h3 className="member-name">{member.name}</h3>
-
-          <div className="member-roles">
-            {member.roles.map((role) => (
-              <span key={role} className="role-badge">
-                {role}
-              </span>
-            ))}
+          <div className="member-name-and-photo">
+            <img
+              src={member.photoUrl}
+              alt={member.name}
+              className="member-photo"
+            />
+            <h3 className="member-name">{member.name}</h3>
+          </div>
+          <div className="member-subheading">
+            <div className="member-roles">
+                {member.roles.map((role) => (
+                  <span key={role} className="role-badge">
+                    {role}
+                  </span>
+                ))}
+            </div>
+            <p>
+              Projects
+            </p>
+            <div className="member-projects">
+                {member.projects.map((project) => (
+                  <span key={project} className="project-badge">
+                    {project}
+                  </span>
+                ))}
+            </div>
           </div>
         </div>
 

@@ -3,17 +3,16 @@ import Logo from "../assets/logos/gfg-icon-steel.svg";
 
 import linkedinLogo from "../assets/icons/linkedin.svg";
 import linkedinLogoHover from "../assets/icons/linkedin-hover.svg";
-
 import youtubeLogo from "../assets/icons/youtube.svg";
 import youtubeLogoHover from "../assets/icons/youtube-hover.svg";
+import emailIcon from "../assets/icons/email.svg";
+import emailIconHover from "../assets/icons/email-hover.svg";
+
 import { useLocation } from "react-router-dom";
 
 export default function Footer() {
   const location = useLocation();
-  const isHome = location.pathname === "/";
   const isMobile = window.innerWidth < 1000;
-  
-  if (isHome) return null;
   
 
   return (
@@ -29,33 +28,39 @@ export default function Footer() {
 
       <footer className="footer-right">
         <div>
-          <a href="mailto:grandforgegames@gmail.com?subject=Website%20Inquiry"
-            className="contact-button">
+          <a href="mailto:business.contact@grandforgegames.com"
+            className="footer-button">
+            <span className="icon-wrapper">
+              <img src={emailIcon} className="icon base" alt="LinkedIn" />
+              <img src={emailIconHover} className="icon hover" alt="LinkedIn" />
+            </span>
             Contact Us
           </a>
 
         </div>
         <a
-          href="https://www.youtube.com/@GrandForgeGames"
-          className="icon-button icon-button--youtube"
-          title="YouTube"
-        >
-          <span className="icon-wrapper">
-            <img src={youtubeLogo} className="icon base" alt="YouTube" />
-            <img src={youtubeLogoHover} className="icon hover" alt="YouTube" />
-          </span>
-        </a>
-        <a
           href="https://www.linkedin.com/company/grand-forge-games/"
           target="_blank"
           rel="noopener noreferrer"
-          className="icon-button icon-button--linkedin"
+          className="footer-button"
           title="LinkedIn"
         >
           <span className="icon-wrapper">
             <img src={linkedinLogo} className="icon base" alt="LinkedIn" />
             <img src={linkedinLogoHover} className="icon hover" alt="LinkedIn" />
           </span>
+          LinkedIn
+        </a>
+        <a
+          href="https://www.youtube.com/@GrandForgeGames"
+          className="footer-button"
+          title="YouTube"
+        >
+          <span className="icon-wrapper">
+            <img src={youtubeLogo} className="icon base" alt="YouTube" />
+            <img src={youtubeLogoHover} className="icon hover" alt="YouTube" />
+          </span>
+          YouTube
         </a>
       </footer>
     </div>
