@@ -154,7 +154,7 @@ export default function Forsaken() {
             className={`game-content ${expanded ? "open" : ""}`}
           >
             <h3>Slideshow</h3>
-            <p className="secondary-text">
+            <p className="tertiary-text">
               All images captured within Unreal Engine.
             </p>
             <Slideshow/>
@@ -174,7 +174,16 @@ export default function Forsaken() {
               </p>
               <img className="forsaken-map" src="/WorldMap.png"/>
             </div>
-            <h3>Epic Grants Video Submission</h3>
+            <h3>Pitch Video</h3>
+            <p className="tertiary-text">
+              Video submission for &nbsp;
+              <a 
+              href="https://unrealengine.com/megagrants"
+              >
+                Epic MegaGrants 
+              </a>
+               &nbsp; 2026
+            </p>
             <div className="pitch-video">
               <iframe
                 src="https://www.youtube.com/embed/88ctGLANEG0"
@@ -184,13 +193,17 @@ export default function Forsaken() {
                 allowFullScreen
               ></iframe>
             </div>
-            <h3>More</h3>
-            <p>
-              Our artists are creating a wealth of unique weapons, armor, and items to collect.
-              The sound team composes music and creates sound effects to bring the world of Forsaken to life.
+            
+            <div className="art-section">
+              <div>
+                <h3>More</h3>
+                <p>
+                  Our artists are creating a wealth of unique weapons, armor, and items to collect.
+                  The sound team composes music and creates sound effects to bring the world of Forsaken to life.
+                </p>
+              </div>
               <SpriteSlideshow/>
-              <br/>
-            </p>
+            </div>
             <div id="builds" className="builds">
               <SectionHeader icon={Bullet}>
                 Builds

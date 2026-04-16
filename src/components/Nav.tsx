@@ -11,7 +11,7 @@ export default function NavFunc() {
   const location = useLocation();
   const isHome = location.pathname === "/";
 
-  const isMobile = window.innerWidth < 1000;
+  const isMobile = window.innerWidth < 1200;
 
   const [aboutOpen, setAboutOpen] = useState(false);
   const [projectsOpen, setProjectsOpen] = useState(false);
