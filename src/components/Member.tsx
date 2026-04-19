@@ -122,11 +122,12 @@ const TeamMemberCard: React.FC<Props> = ({
           </div>
         </div>
         
-        {(member.bio || member.links) && (
-            <div className="member-divider"/>
-        )}
+        
   
         <div className="member-extra">
+          {(member.bio || member.links) && (
+            <div className="member-divider"/>
+          )}
           {member.bio && (
             <div>
               <p className="member-subheading">
@@ -139,9 +140,9 @@ const TeamMemberCard: React.FC<Props> = ({
           )}
 
           {member.links && (
-            <div>
+            <div className="member-links-wrapper">
               <p className="member-subheading">
-                    Links
+                Links
               </p>
               <div className="member-links">
 

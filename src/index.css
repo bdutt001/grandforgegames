@@ -1,29 +1,14 @@
-/*
-======================
-IMPORTS
-======================
-*/
-
+/* IMPORTS */
 /* #region */
 
 @import url('https://fonts.googleapis.com');
 
 /* #endregion */
 
-/*
-======================
-ALL
-======================
-*/
-
+/*ALL*/
 /* #region */
 
-/*
-======================
-root
-======================
-*/
-
+/* root */
 /* #region */
 
 * {
@@ -100,14 +85,8 @@ root
 
 /* #endregion */
 
-/* 
-======================
-text formatting
-======================
-*/
-
+/* text formatting */
 /* #region */
-
 html {
   font-size: var(--text-base);
 
@@ -130,8 +109,8 @@ h2 {
   gap: 10px;
 
   color: var(--heading-color);
-  margin-top: 1.25rem;
-  margin-bottom: .75rem;
+  margin-top: 3rem;
+  margin-bottom: .5rem;
 
   font-size: var(--text-2xl);
   font-weight: 650;
@@ -147,7 +126,7 @@ h3 {
   color: var(--heading-color);
   font-weight: 650;
 
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   margin-bottom: .5rem;
 }
 
@@ -185,7 +164,7 @@ hr {
 }
 
 body {
-  margin-top: 20px;
+  margin-top: 0;
   margin: 0;
   background: var(--background-color);
   color: var(--primary-text-color);
@@ -240,15 +219,9 @@ iframe {
   border-radius: var(--border-radius-button);
   background: var(--background-color);
 }
-
 /* #endregion */
 
-/*
-======================
-buttons
-======================
-*/
-
+/* buttons */
 /* #region */
 
 .button,
@@ -792,11 +765,7 @@ footer
 
 /* #endregion */
 
-/*
-======================
-HOME
-======================
-*/
+/*HOME*/
 
 /* #region */
 
@@ -921,36 +890,28 @@ hero
 
 /* #endregion */
 
-/*
-======================
-ABOUT
-======================
-*/
+/* ABOUT */
 
 /* #region */
 
 .map-parent {
-  width: 60%;
+  width: 80%;
 }
 
 .about-top {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 1fr .5fr;
+  gap: 0rem;
+
+  margin-top: -1rem;
 }
 
 .about-links {
   display: flex;
-  flex-direction: column;
-  width: 25%;
-  justify-items: center;
+  flex-direction: row;
 
   gap: 1rem;
-}
-
-.about-headings {
-  display: flex;
-  flex-direction: row;
-  margin-bottom: .5rem;
+  margin-bottom: 1rem;
 }
 /*
 ====================
@@ -1191,7 +1152,7 @@ cards expanded
 
 .team-member-card.expanded .member-extra {
   opacity: 1;
-  max-height: 200px;
+  max-height: fit-content;
   transform: translateY(0);
   transition: all .25s ease-in-out;
 
@@ -1329,19 +1290,11 @@ filters
 
 /* #endregion */
 
-/*
-======================
-PROJECTS
-======================
-*/
+/* PROJECTS */
 
 /* #region */
 
-/*
-======================
-game cards
-======================
-*/
+/* game cards */
 
 /* #region */
 
@@ -2201,11 +2154,7 @@ forsaken
 
 /* #endregion */
 
-/*
-======================
-MEDIA QUERIES
-======================
-*/
+/* MEDIA QUERIES */
 
 /* #region */
 
@@ -2463,14 +2412,79 @@ MEDIA QUERIES
     text-wrap: nowrap;
   }
 
-  .team-member-card.expanded {
-    width: 80vw;
-    height: auto;  
-    min-height: fit-content;
+  .members {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
   }
 
+  .team-member-card {
+    max-width: 100%;
+  }
+
+  .team-member-card.expanded {
+    width: 90vw; 
+    min-height: fit-content;
+    transform: scale(.85);
+  }
+
+  .team-member-card.expanded .member-inner {
+    max-width: 100%;
+    min-height: fit-content;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0rem;
+  }
+
+  .member-divider {
+    display: none;
+  }
+
+  .member-inner {
+    gap: 0rem;
+  }
+
+  .member-roles {
+  
+  }
+  
+  .member-extra {
+    width: fit-content;
+    height: fit-content;
+  }
+
+  .member-bio {
+    margin-top: 0rem;
+  }
+
+  .member-links {
+    flex-direction: column;
+    align-items: center;
+    max-height: none;
+  }
+
+  .member-subheading {
+    margin-bottom: .5rem;
+  }
+
+
+  .about-top {
+    display: flex;
+    flex-direction: column;
+  }
+
+
   .map-parent {
+    width: 100%;
     place-items: center;
+  }
+
+  .about-links {
+    flex-direction: row;
+  }
+
+  .filter-divider {
+    display: none;
   }
 
   .slideshow {

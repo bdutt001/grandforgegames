@@ -14,6 +14,8 @@ import youtubeLogo from "../assets/icons/youtube.svg";
 import youtubeLogoHover from "../assets/icons/youtube-hover.svg";
 import emailIcon from "../assets/icons/email.svg";
 import emailIconHover from "../assets/icons/email-hover.svg";
+import discordIcon from "../assets/icons/discord.svg";
+import discordIconHover from "../assets/icons/discord-hover.svg";
 
 import Nick from "../assets/photos/Nick_S.jpg";
 import Nate from "../assets/photos/Nathan_Y.jpg";
@@ -109,7 +111,7 @@ export default function Team() {
       links: [
         { type: "Mail", url:"mailto:bendutton9@gmail.com" },
         { type: "LinkedIn", url: "https://linkedin.com/in/benjamin-dutton-a557343a5" },
-        { type: "GitHub", url: "https://github.com/bdutt001" }
+        { type: "GitHub", url: "https://github.com/bdutt001" },
       ]
     },
     {
@@ -122,7 +124,7 @@ export default function Team() {
         {name: "Temporal Urgency", url:"temporal-urgency"},
       ],
       links: [
-        { type: "LinkedIn", url: "https://linkedin.com/in/elhadg-diouf/" }
+        { type: "LinkedIn", url: "https://linkedin.com/in/elhadg-diouf/" },
       ]
     },
     {
@@ -278,54 +280,78 @@ export default function Team() {
       </SectionHeader>
       <p>
         Grand Forge Games is an independent game studio founded in 2025.
-        We are based in Yorktown, Virginia.
       </p>
-      <div className="about-headings">
-        <div className="about-links">
-          <h3>Explore</h3>
-        </div>
-        <h3>Location</h3>
-      </div>
       <div className="about-top">
-        <div className="about-links">
-          <a href="mailto:business.contact@grandforgegames.com"
-            className="icon-button">
-            <span className="icon-wrapper">
-              <img src={emailIcon} className="icon base" alt="LinkedIn" />
-              <img src={emailIconHover} className="icon hover" alt="LinkedIn" />
-            </span>
-            Contact Us
-          </a>
-          <a
-            href="https://www.linkedin.com/company/grand-forge-games/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="icon-button"
-            title="LinkedIn"
-          >
-            <span className="icon-wrapper">
-              <img src={linkedinLogo} className="icon base" alt="LinkedIn" />
-              <img src={linkedinLogoHover} className="icon hover" alt="LinkedIn" />
-            </span>
-            LinkedIn
-          </a>
-          <a
-            href="https://www.youtube.com/@GrandForgeGames"
-            className="icon-button"
-            title="YouTube"
-          >
-            <span className="icon-wrapper">
-              <img src={youtubeLogo} className="icon base" alt="YouTube" />
-              <img src={youtubeLogoHover} className="icon hover" alt="YouTube" />
-            </span>
-            YouTube
-          </a>
-        </div>
-        <div className="map-parent">
-          <div className="map-wrapper">
+        <div>
+          <h3>Location</h3>
+          <p className="tertiary-text">
+            Yorktown, Virginia
+          </p>
+          <div className="map-parent">
             <Map />
           </div>
         </div>
+        <div>
+          <h3>Find Us Elsewhere</h3>
+          <p className="tertiary-text">
+            Contact us by email:
+          </p>
+          <div className="about-links">
+          
+            <a href="mailto:business.contact@grandforgegames.com"
+              className="footer-button">
+              <span className="icon-wrapper">
+                <img src={emailIcon} className="icon base" alt="LinkedIn" />
+                <img src={emailIconHover} className="icon hover" alt="LinkedIn" />
+              </span>
+              Contact Us
+            </a>
+          </div>
+          <p className="tertiary-text">
+            Join our community Discord server:
+          </p>
+          <div className="about-links">
+          
+            <a href="https://discord.gg/BTbxn2tE4p"
+              className="footer-button">
+              <span className="icon-wrapper">
+                <img src={discordIcon} className="icon base" alt="Discord" />
+                <img src={discordIconHover} className="icon hover" alt="Discord" />
+              </span>
+              Discord
+            </a>
+          </div>
+          <p className="tertiary-text">
+            Find us on LinkedIn and Youtube:
+          </p>
+          <div className="about-links">
+            <a
+              href="https://www.linkedin.com/company/grand-forge-games/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-button"
+              title="LinkedIn"
+            >
+              <span className="icon-wrapper">
+                <img src={linkedinLogo} className="icon base" alt="LinkedIn" />
+                <img src={linkedinLogoHover} className="icon hover" alt="LinkedIn" />
+              </span>
+              LinkedIn
+            </a>
+            <a
+              href="https://www.youtube.com/@GrandForgeGames"
+              className="footer-button"
+              title="YouTube"
+            >
+              <span className="icon-wrapper">
+                <img src={youtubeLogo} className="icon base" alt="YouTube" />
+                <img src={youtubeLogoHover} className="icon hover" alt="YouTube" />
+              </span>
+              YouTube
+            </a>
+          </div>
+        </div>
+        
       </div>
 
       <div id="team">
