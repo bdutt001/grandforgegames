@@ -8,15 +8,6 @@ import SectionHeader from "../components/SectionHeader.tsx";
 
 import Placeholder from "../assets/logos/gfg-icon-gold-black.svg";
 
-import linkedinLogo from "../assets/icons/linkedin.svg";
-import linkedinLogoHover from "../assets/icons/linkedin-hover.svg";
-import youtubeLogo from "../assets/icons/youtube.svg";
-import youtubeLogoHover from "../assets/icons/youtube-hover.svg";
-import emailIcon from "../assets/icons/email.svg";
-import emailIconHover from "../assets/icons/email-hover.svg";
-import discordIcon from "../assets/icons/discord.svg";
-import discordIconHover from "../assets/icons/discord-hover.svg";
-
 import Nick from "../assets/photos/Nick_S.jpg";
 import Nate from "../assets/photos/Nathan_Y.jpg";
 import Ben from "../assets/photos/Ben_D.PNG";
@@ -274,167 +265,106 @@ export default function Team() {
   }, [filteredMembers]);
 
   return (
-    <main className="main">
-      <SectionHeader icon={Bullet}>
-        About Us
-      </SectionHeader>
-      <p>
-        Grand Forge Games is an independent game studio founded in 2025.
-      </p>
-      <div className="about-top">
-        <div>
-          <h3>Location</h3>
-          <p className="tertiary-text">
-            Yorktown, Virginia
-          </p>
-          <div className="map-parent">
-            <Map />
-          </div>
-        </div>
-        <div>
-          <h3>Find Us Elsewhere</h3>
-          <p className="tertiary-text">
-            Contact us by email:
-          </p>
-          <div className="about-links">
-          
-            <a href="mailto:business.contact@grandforgegames.com"
-              className="footer-button">
-              <span className="icon-wrapper">
-                <img src={emailIcon} className="icon base" alt="LinkedIn" />
-                <img src={emailIconHover} className="icon hover" alt="LinkedIn" />
-              </span>
-              Contact Us
-            </a>
-          </div>
-          <p className="tertiary-text">
-            Join our community Discord server:
-          </p>
-          <div className="about-links">
-          
-            <a href="https://discord.gg/BTbxn2tE4p"
-              className="footer-button">
-              <span className="icon-wrapper">
-                <img src={discordIcon} className="icon base" alt="Discord" />
-                <img src={discordIconHover} className="icon hover" alt="Discord" />
-              </span>
-              Discord
-            </a>
-          </div>
-          <p className="tertiary-text">
-            Find us on LinkedIn and Youtube:
-          </p>
-          <div className="about-links">
-            <a
-              href="https://www.linkedin.com/company/grand-forge-games/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="footer-button"
-              title="LinkedIn"
-            >
-              <span className="icon-wrapper">
-                <img src={linkedinLogo} className="icon base" alt="LinkedIn" />
-                <img src={linkedinLogoHover} className="icon hover" alt="LinkedIn" />
-              </span>
-              LinkedIn
-            </a>
-            <a
-              href="https://www.youtube.com/@GrandForgeGames"
-              className="footer-button"
-              title="YouTube"
-            >
-              <span className="icon-wrapper">
-                <img src={youtubeLogo} className="icon base" alt="YouTube" />
-                <img src={youtubeLogoHover} className="icon hover" alt="YouTube" />
-              </span>
-              YouTube
-            </a>
-          </div>
-        </div>
-        
-      </div>
-
-      <div id="team">
+    <div>
+      <main className="main">
         <SectionHeader icon={Bullet}>
-          Meet the Team
-        </SectionHeader>
-
-        <p>
-          The Grand Forge Games team is comprised of twelve talented members from across the world.
-          Members of our team have competed in several game jams, taking first prize in{" "}
-          <a href="https://itch.io/jam/shadows-of-the-imagination-fall25/rate/3937613">
-            "Shadows of the Imagination: A Game Jam"
-          </a>, hosted by Old Dominion University in October of 2025.
-        </p>
-        <h3>Members</h3>
-        <p className="tertiary-text">
-          Filter based on leadership positions, departments, and projects.
-        </p>
-        <div className="role-filters">
-          {allTags.map(tag => (
-            <span
-              key={tag}
-              className={`filter-tag ${selectedRoles.includes(tag) ? "active" : ""}`}
-              onClick={() => toggleRole(tag)}
-            >
-              {tag}
-            </span>
-          ))}
-
-          <span className="filter-divider" />
-
-          {allProjects.map(project => (
-            <span
-              key={project.name}
-              className={`filter-tag project ${selectedProjects.includes(project.name) ? "active" : ""}`}
-              onClick={() => toggleProject(project.name)}
-            >
-              {project.name}
-            </span>
-          ))}
-        </div>
-
-        <button
-          onClick={() => {
-            setSelectedRoles([]);
-            setSelectedProjects([]);
-          }}
-          className="button clear"
-
-        >
-          Clear Filters
-        </button>
-
-      
-
-        <div className={`members ${expandedId !== null ? "dim-active" : ""}`}>
-          {filteredMembers.map(member => (
-            <Member
-              key={member.id}
-              member={member}
-              isExpanded={false}
-              setExpandedId={setExpandedId}
-            />
-          ))}
-        </div>
-        {expandedId !== null && (
-          <div
-            className="member-overlay"
-            onClick={() => setExpandedId(null)}
-          >
-            <div
-              className="member-overlay-card"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <Member
-                member={filteredMembers.find(m => m.id === expandedId)}
-                isExpanded={true}
-                setExpandedId={setExpandedId}
-              />
+              About Us
+            </SectionHeader>
+            <p>
+              Grand Forge Games is an independent game studio founded in 2025.
+            </p>
+        <div className="about-top">
+          <div>
+            
+            
+            <h3>Location</h3>
+            <p className="tertiary-text">
+              Yorktown, Virginia
+            </p>
+            <div className="map-parent">
+              <Map />
             </div>
           </div>
-        )}
-      </div>
-    </main>
+          
+      
+      
+        </div>
+        <div id="team">
+          <SectionHeader icon={Bullet}>
+            Meet the Team
+          </SectionHeader>
+          <p>
+            The Grand Forge Games team is comprised of twelve talented members from across the world.
+            Members of our team have competed in several game jams, taking first prize in{" "}
+            <a href="https://itch.io/jam/shadows-of-the-imagination-fall25/rate/3937613">
+              "Shadows of the Imagination: A Game Jam"
+            </a>, hosted by Old Dominion University in October of 2025.
+          </p>
+          <h3>Members</h3>
+          <p className="tertiary-text">
+            Filter based on leadership positions, departments, and projects.
+          </p>
+          <div className="role-filters">
+            {allTags.map(tag => (
+              <span
+                key={tag}
+                className={`filter-tag ${selectedRoles.includes(tag) ? "active" : ""}`}
+                onClick={() => toggleRole(tag)}
+              >
+                {tag}
+              </span>
+            ))}
+            <span className="filter-divider" />
+            {allProjects.map(project => (
+              <span
+                key={project.name}
+                className={`filter-tag project ${selectedProjects.includes(project.name) ? "active" : ""}`}
+                onClick={() => toggleProject(project.name)}
+              >
+                {project.name}
+              </span>
+            ))}
+          </div>
+          <button
+            onClick={() => {
+              setSelectedRoles([]);
+              setSelectedProjects([]);
+            }}
+            className="button clear"
+          >
+            Clear Filters
+          </button>
+      
+          <div className={`members ${expandedId !== null ? "dim-active" : ""}`}>
+            {filteredMembers.map(member => (
+              <Member
+                key={member.id}
+                member={member}
+                isExpanded={false}
+                setExpandedId={setExpandedId}
+              />
+            ))}
+          </div>
+          {expandedId !== null && (
+            <div
+              className="member-overlay"
+              onClick={() => setExpandedId(null)}
+            >
+              <div
+                className="member-overlay-card"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <Member
+                  member={filteredMembers.find(m => m.id === expandedId)}
+                  isExpanded={true}
+                  setExpandedId={setExpandedId}
+                />
+              </div>
+            </div>
+          )}
+        </div>
+      </main>
+      
+    </div>
   );
 }

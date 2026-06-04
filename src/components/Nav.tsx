@@ -105,6 +105,7 @@ export default function NavFunc() {
                 </NavDropdown>
               </div>
             )}
+            <a href="/contact" className="nav-item-link">Contact</a>
           </Nav>
         </Navbar.Collapse>
       </Container>

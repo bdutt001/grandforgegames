@@ -7,6 +7,7 @@ import Forsaken from "./pages/Forsaken";
 import TemporalUrgency from "./pages/TemporalUrgency";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
+import Contact from "./pages/Contact";
 
 
 
@@ -24,6 +25,8 @@ export default function App() {
           <Route path="/projects" element={<Projects></Projects>} />
           <Route path="/forsaken" element={<Forsaken />} />
           <Route path="/temporal-urgency" element={<TemporalUrgency/>} />
+          <Route path="/contact" element={<Contact/>} />
+
         </Routes>
         <Footer />
       </div>
