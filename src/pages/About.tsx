@@ -58,7 +58,7 @@ export default function Team() {
       id: 2,
       name: "Nathan Young",
       photoUrl: Nate,
-      roles: ["Lead Programmer"],
+      roles: ["Programmer"],
       projects: [
         {name: "Forsaken", url: "/forsaken"},
       ],
@@ -147,7 +147,7 @@ export default function Team() {
       id: 9,
       name: "Avery Baker",
       photoUrl: Avery,
-      roles: ["Programmer"],
+      roles: ["Lead Programmer"],
       projects: [
         {name: "Forsaken", url: "/forsaken"},
       ],
