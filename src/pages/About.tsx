@@ -42,6 +42,17 @@ export default function Team() {
       ]
     },
     {
+      id: 9,
+      name: "Pierre",
+      photoUrl: Placeholder,
+      roles: ["Lead Composer", "Sound Designer"],
+      projects: [
+        {name: "Forsaken", url: "/forsaken"},
+      ],
+      links: [
+      ]
+    },
+    {
       id: 5,
       name: "William Latimer",
       photoUrl: Billiam,
@@ -56,6 +67,19 @@ export default function Team() {
     },
     {
       id: 2,
+      name: "Avery Baker",
+      photoUrl: Avery,
+      roles: ["Lead Programmer"],
+      projects: [
+        {name: "Forsaken", url: "/forsaken"},
+      ],
+      links: [
+        { type: "LinkedIn", url: "https://www.linkedin.com/in/averybaker4519/" },
+        { type: "Portfolio", url: "https://sites.google.com/view/averybakerportfolio/games" }
+      ]
+    },
+    {
+      id: 9,
       name: "Nathan Young",
       photoUrl: Nate,
       roles: ["Programmer"],
@@ -143,19 +167,7 @@ export default function Team() {
         { type: "LinkedIn", url: "https://www.linkedin.com/in/leonardo-evangelisti-56677a15b/" }
       ]
     },
-    {
-      id: 9,
-      name: "Avery Baker",
-      photoUrl: Avery,
-      roles: ["Lead Programmer"],
-      projects: [
-        {name: "Forsaken", url: "/forsaken"},
-      ],
-      links: [
-        { type: "LinkedIn", url: "https://www.linkedin.com/in/averybaker4519/" },
-        { type: "Portfolio", url: "https://sites.google.com/view/averybakerportfolio/games" }
-      ]
-    },
+    
     {
       id: 13,
       name: "Alex Huang",
