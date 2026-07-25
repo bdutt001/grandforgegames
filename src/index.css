@@ -1545,13 +1545,15 @@ game background
   position: fixed;
   inset: 0;
 
-  background-image: url("/tu-render4.png"); 
-  background-size: 160vh;
-  background-position: bottom right;
+  background-image: url("/5.png"); 
+  background-size: 100svw;
+  background-position: bottom center;
   background-repeat: no-repeat;
   z-index: -2;
 
-  right: -28rem;
+  bottom: -5rem;
+
+ ;
 
   opacity: 0;
   animation: fadeUpIn 1.5s ease-out forwards;  
@@ -1826,6 +1828,8 @@ game details
 
   margin-left: 0rem;
 
+  
+
   z-index: 1;
 }
 
@@ -1833,6 +1837,7 @@ game details
   height: auto;
 
   scroll-margin-top: var(--header-height);
+  padding-bottom: 5rem;
 }
 
 .arrow-row {
@@ -2569,4 +2574,54 @@ forsaken
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+
+.pillars {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding-bottom: 2rem;
+  padding-top: 1rem;
+}
+
+.pillar h4 {
+  text-wrap: nowrap;
+  /* padding-right: 2rem; */
+}
+
+.pillar {
+  padding-right: 2rem;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.section img {
+  align-self: center;
+  justify-self: center;
+  width: 70%;
+}
+
+.pillar {
+  display: flex;
+  flex-direction: column;
+}
+
+.pillar img {
+  height: 220px;
+  width: 90%;
+  justify-self: center;
+  align-self: center;
+}
+
+.tu-art {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.tu-art img {
+  align-self: center;
 }

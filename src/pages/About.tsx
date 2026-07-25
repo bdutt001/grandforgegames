@@ -52,19 +52,7 @@ export default function Team() {
       links: [
       ]
     },
-    {
-      id: 5,
-      name: "William Latimer",
-      photoUrl: Billiam,
-      roles: ["Creative Director", "Lead Composer"],
-      projects: [
-        {name: "Forsaken", url: "/forsaken"},
-        {name: "Temporal Urgency", url:"/temporal-urgency"},
-      ],
-      links: [
-        { type: "LinkedIn", url: "https://linkedin.com/in/wiliam-latimer-08687a395/" }
-      ]
-    },
+    
     {
       id: 2,
       name: "Avery Baker",
@@ -156,6 +144,19 @@ export default function Team() {
       ]
     },
     {
+      id: 5,
+      name: "William Latimer",
+      photoUrl: Billiam,
+      roles: ["Composer"],
+      projects: [
+        {name: "Forsaken", url: "/forsaken"},
+        {name: "Temporal Urgency", url:"/temporal-urgency"},
+      ],
+      links: [
+        { type: "LinkedIn", url: "https://linkedin.com/in/wiliam-latimer-08687a395/" }
+      ]
+    },
+    {
       id: 8,
       name: "Leonardo Evangelisti",
       photoUrl: Leo,
@@ -167,7 +168,6 @@ export default function Team() {
         { type: "LinkedIn", url: "https://www.linkedin.com/in/leonardo-evangelisti-56677a15b/" }
       ]
     },
-    
     {
       id: 13,
       name: "Alex Huang",
