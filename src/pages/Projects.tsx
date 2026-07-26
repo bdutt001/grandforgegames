@@ -1,6 +1,6 @@
 import React from "react";
 import Forsaken from "../assets/posters/forsaken.jpg";
-import TemporalUrgency from "../assets/posters/project-tu.jpg";
+import TemporalUrgency from "../assets/posters/tu.png";
 import Bullet from "../assets/logos/gfg-icon-gold.svg";
 import SectionHeader from "../components/SectionHeader";
 
@@ -42,7 +42,7 @@ export default function Projects() {
                     </div>
                     <div className="game-card">
                         <a href="/temporal-urgency">
-                            <img src={TemporalUrgency} alt="Temporal Urgency" />
+                            <img src={TemporalUrgency} alt="Temporal Urgency"/>
 
                             <div className="game-overlay">
                             <h3 className="game-title">Temporal Urgency</h3>
