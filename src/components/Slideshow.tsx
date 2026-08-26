@@ -81,6 +81,7 @@ export default function Slideshow() {
             transition: "opacity 0.5s ease-in-out",
             opacity: fade ? 1 : 0
           }}
+          decoding="async"
         />
 
         <button

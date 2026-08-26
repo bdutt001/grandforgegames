@@ -1420,6 +1420,16 @@ filters
   transform: scale(.7) translateY(1px);
 }
 
+.tag-button.playtest.steam img {
+  height: 1.25lh;
+}
+
+.icon.base.steam img {
+  width: auto;
+  height: auto;
+}
+
+
 .tag-button.playtest:hover {
   color: var(--primary-text-color);
   background-color: var(--accent-color);
@@ -2624,4 +2634,20 @@ forsaken
 
 .tu-art img {
   align-self: center;
+}
+
+.tag-button.playtest.steam .icon-wrapper {
+  width: 2rem;
+  height: 2rem;
+}
+
+.game-card .tag-button.playtest .icon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.game-card .tag-button.playtest.steam .icon-wrapper {
+  width: 1.75rem;
+  height: 1.75rem;
 }

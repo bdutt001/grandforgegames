@@ -47,9 +47,6 @@ export default function NavFunc() {
           <Nav className="ms-auto">
             <a href="/" className="nav-item-link">Home</a>
             <a href="/about" className="nav-item-link">About</a>
-            <a onClick={() => navigateToTeam()} className="nav-item-link">
-              Members
-            </a>
             
             {isMobile ? (
               /* ================= MOBILE VERSION ================= */

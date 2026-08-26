@@ -155,7 +155,7 @@ export default function Forsaken() {
           >
             <h3>Slideshow</h3>
             <p className="tertiary-text">
-              All images captured within Unreal Engine.
+              All images captured in Unreal Engine.
             </p>
             <Slideshow/>
             {/* <p className="quote">

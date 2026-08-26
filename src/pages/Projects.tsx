@@ -6,6 +6,8 @@ import SectionHeader from "../components/SectionHeader";
 
 import Play from "../assets/icons/play-gold.svg";
 import PlayHover from "../assets/icons/play-white.svg";
+import Steam from "../assets/icons/steam-gold.svg";
+import SteamHover from "../assets/icons/steam-white.svg";
 
 export default function Projects() {
     return (
@@ -45,16 +47,26 @@ export default function Projects() {
                             <img src={TemporalUrgency} alt="Temporal Urgency"/>
 
                             <div className="game-overlay">
-                            <h3 className="game-title">Temporal Urgency</h3>
-                            <p className="game-status">In Development</p>
-                            {/* <p className="game-date unavailable">No Release Announced</p> */}
+                                <h3 className="game-title">Temporal Urgency</h3>
+                                <p className="game-status">In Development</p>
+                                {/* <p className="game-date unavailable">No Release Announced</p> */}
+                                <div className="game-release">
+                                    <a 
+                                        href="https://store.steampowered.com/app/4757140/Temporal_Urgency/"
+                                        className="tag-button playtest steam"
+                                        target="blank"
+                                    >
+                                        <span className="icon-wrapper steam">
+                                            <img src={Steam} className="icon base steam"/>
+                                            <img src={SteamHover} className="icon hover"/>
+                                        </span>
+                                        Wishlist on Steam
+                                    </a>
+                                </div>
                             </div>
                         </a>
                     </div>
                 </div>
-                {/* .
-                Our most recently-published build of Forsaken can be downloaded <nbsp></nbsp>
-                <a href= "./forsaken#builds" >here.</a> */}
             </p>
         </main>
     );
