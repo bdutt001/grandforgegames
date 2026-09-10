@@ -4,12 +4,17 @@ import { scrollToElement } from "../utils/scrollHelpers";
 
 import Bullet from "../assets/logos/gfg-icon-gold.svg";
 import SlideshowTU from "../components/SlideshowTU";
+import SectionHeader from "../components/SectionHeader";
+
 
 import Star from "../assets/icons/star.svg";
 import StarHover from "../assets/icons/star-gold.svg";
 import Unreal from "../assets/icons/unreal.svg";
 import UnrealHover from "../assets/icons/unreal-gold.svg";
-import SectionHeader from "../components/SectionHeader";
+import Steam from "../assets/icons/steam.svg";
+import SteamHover from "../assets/icons/steam-gold.svg";
+
+
 
 import Pillars from "../assets/concept-art/pillars.png";
 import Narrative from "../assets/concept-art/narrative.png";
@@ -62,7 +67,7 @@ export default function TemporalUrgency(){
             </div>
 
             <p>
-              Temporal Urgency is a psychological-horror puzzle-driven experience currently in development at Grand Forge Games.
+              Temporal Urgency is a psychological-horror puzzle-driven game currently in development at Grand Forge Games.
             </p>
 
             <div className="subheading">
@@ -83,6 +88,16 @@ export default function TemporalUrgency(){
                   <img src={UnrealHover} className="icon hover" />
                 </span>
                 Built in Unreal Engine 5.7
+              </a>
+              <a
+                href="https://store.steampowered.com/app/4757140/Temporal_Urgency/"
+                className="tag-button engine"
+              >
+                <span className="icon-wrapper steam">
+                    <img src={Steam} className="icon base steam"/>
+                    <img src={SteamHover} className="icon hover"/>
+                </span>
+                Wishlist on Steam
               </a>
             </div>
           </div>
@@ -200,7 +215,7 @@ export default function TemporalUrgency(){
             <div className="section">
               <h4>Puzzle-Driven Horror Exploration</h4>
               <p>
-                This is a thinking player’s horror experience. Progression is driven by puzzles seamlessly woven into the environment making every discovery feel earned and every breakthrough unforgettable.
+                This is a thinking player’s horror game. Progression is driven by puzzles seamlessly woven into the environment making every discovery feel earned and every breakthrough unforgettable.
               </p>
             </div>
 

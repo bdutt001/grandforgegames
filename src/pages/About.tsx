@@ -283,24 +283,22 @@ export default function Team() {
               About Us
             </SectionHeader>
             <p>
-              Grand Forge Games is an independent game studio founded in 2025.
+              Grand Forge Games is an independent game studio based in Yorktown, Virginia. 
             </p>
-        <div className="about-top">
-          <div>
-            
-            
-            <h3>Location</h3>
-            <p className="tertiary-text">
-              Yorktown, Virginia
+            <p>
+              Founded in 2025, we are currently working on two projects: <a 
+                href="/forsaken"
+                target="blank"
+              >
+                Forsaken
+              </a> and <a 
+                href="/temporal-urgency"
+                target="blank"
+              >
+                Temporal Urgency
+              </a>
+              .
             </p>
-            <div className="map-parent">
-              <Map />
-            </div>
-          </div>
-          
-      
-      
-        </div>
         <div id="team">
           <SectionHeader icon={Bullet}>
             Meet the Team
