@@ -2,7 +2,6 @@ import { useState, useEffect, useLayoutEffect } from "react";
 
 import Bullet from "../assets/logos/gfg-icon-gold.svg";
 
-import Map from "../components/Map.tsx";
 import Member from "../components/Member.tsx";
 import SectionHeader from "../components/SectionHeader.tsx";
 
@@ -12,8 +11,9 @@ import Nick from "../assets/photos/Nick_S.jpg";
 import Nate from "../assets/photos/Nathan_Y.jpg";
 import Ben from "../assets/photos/Ben_D.PNG";
 import Alex from "../assets/photos/Alexander_H.jpg";
-import Col from "../assets/photos/Col_R.jpg";
-import Billiam from "../assets/photos/Billy_L.jpg";
+import Bianca from "../assets/photos/Bianca.jpg";
+// import Col from "../assets/photos/Col_R.jpg";
+// import Billiam from "../assets/photos/Billy_L.jpg";
 import Leo from "../assets/photos/Leo_E.jpg";
 import Hazel from "../assets/photos/Olivia_B.jpg";
 import Tavier from "../assets/photos/Tavier_F.jpg";
@@ -80,18 +80,27 @@ export default function Team() {
     },
     {
       id: 4,
-      name: "Cole Reese",
-      photoUrl: Col,
-      roles: ["Lead Artist", "Visual Design"],
+      name: "Bianca Valentine",
+      photoUrl: Bianca,
+      roles: ["Art Director"],
       projects: [
-        {name: "Forsaken", url: "/forsaken"},
-        {name: "Temporal Urgency", url:"/temporal-urgency"},
+        {name: "Temporal Urgency", url: "/temporal-urgency"},
       ],
-      links: [
-        { type: "LinkedIn", url: "https://linkedin.com/in/colereese/" },
-        { type: "ArtStation", url: "https://relocsart.artstation.com/" }
-      ]
     },
+    // {
+    //   id: 4,
+    //   name: "Cole Reese",
+    //   photoUrl: Col,
+    //   roles: ["Lead Artist", "Visual Design"],
+    //   projects: [
+    //     {name: "Forsaken", url: "/forsaken"},
+    //     {name: "Temporal Urgency", url:"/temporal-urgency"},
+    //   ],
+    //   links: [
+    //     { type: "LinkedIn", url: "https://linkedin.com/in/colereese/" },
+    //     { type: "ArtStation", url: "https://relocsart.artstation.com/" }
+    //   ]
+    // },
     {
       id: 11,
       name: "Hazel Bradford",
@@ -143,19 +152,19 @@ export default function Team() {
         { type: "LinkedIn", url: "https://linkedin.com/in/tavier-futrell-8a97442ba/" }
       ]
     },
-    {
-      id: 5,
-      name: "William Latimer",
-      photoUrl: Billiam,
-      roles: ["Composer"],
-      projects: [
-        {name: "Forsaken", url: "/forsaken"},
-        {name: "Temporal Urgency", url:"/temporal-urgency"},
-      ],
-      links: [
-        { type: "LinkedIn", url: "https://linkedin.com/in/wiliam-latimer-08687a395/" }
-      ]
-    },
+    // {
+    //   id: 5,
+    //   name: "William Latimer",
+    //   photoUrl: Billiam,
+    //   roles: ["Composer"],
+    //   projects: [
+    //     {name: "Forsaken", url: "/forsaken"},
+    //     {name: "Temporal Urgency", url:"/temporal-urgency"},
+    //   ],
+    //   links: [
+    //     { type: "LinkedIn", url: "https://linkedin.com/in/wiliam-latimer-08687a395/" }
+    //   ]
+    // },
     {
       id: 8,
       name: "Leonardo Evangelisti",
@@ -199,9 +208,9 @@ export default function Team() {
   ];
 
   const roleGroups: Record<string, string[]> = {
-    Leads: ["CEO", "Project Lead", "Creative Director", "Lead Programmer", "Lead Artist", "Lead Composer", "Lead Writer"],
+    Leads: ["CEO", "Project Lead", "Creative Director", "Lead Programmer", "Lead Artist", "Lead Composer", "Lead Writer", "Art Director"],
     Programming: ["Lead Programmer", "Programmer", "Web Designer"],
-    Art: ["Lead Artist", "Artist", "Visual Design", "Animator"],
+    Art: ["Lead Artist", "Artist", "Visual Design", "Animator", "Art Director"],
     Audio: ["Sound Designer", "Music Producer", "Lead Composer"],
     Writing: ["Lead Writer", "Writer"]
   };
@@ -284,8 +293,7 @@ export default function Team() {
             </SectionHeader>
             <p>
               Grand Forge Games is an independent game studio based in Yorktown, Virginia. 
-            </p>
-            <p>
+              <br/>
               Founded in 2025, we are currently working on two projects: <a 
                 href="/forsaken"
                 target="blank"

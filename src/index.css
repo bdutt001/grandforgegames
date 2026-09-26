@@ -1013,7 +1013,7 @@ CARD CONTENT
 
 .member-photo {
   width: 8rem;
-  height: auto;
+  height: 8rem;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 0.5rem;
@@ -2467,10 +2467,6 @@ forsaken
 
   .member-inner {
     gap: 0rem;
-  }
-
-  .member-roles {
-  
   }
   
   .member-extra {
