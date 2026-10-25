@@ -12,6 +12,7 @@ import Nate from "../assets/photos/Nathan_Y.jpg";
 import Ben from "../assets/photos/Ben_D.PNG";
 import Alex from "../assets/photos/Alexander_H.jpg";
 import Bianca from "../assets/photos/Bianca.jpg";
+import Jon from "../assets/photos/Jon_B.png";
 // import Col from "../assets/photos/Col_R.jpg";
 // import Billiam from "../assets/photos/Billy_L.jpg";
 import Leo from "../assets/photos/Leo_E.jpg";
@@ -42,7 +43,7 @@ export default function Team() {
       ]
     },
     {
-      id: 9,
+      id: 15,
       name: "Pierre",
       photoUrl: Placeholder,
       roles: ["Lead Composer", "Sound Designer"],
@@ -115,7 +116,7 @@ export default function Team() {
       id: 3,
       name: "Ben Dutton",
       photoUrl: Ben,
-      roles: ["Programmer", "Web Designer"],
+      roles: ["Web Developer"],
       projects: [
         {name: "Forsaken", url: "/forsaken"},
       ],
@@ -150,6 +151,17 @@ export default function Team() {
       ],
       links: [
         { type: "LinkedIn", url: "https://linkedin.com/in/tavier-futrell-8a97442ba/" }
+      ]
+    },
+    {
+      id: 16,
+      name: "Jon Benz",
+      photoUrl: Jon,
+      roles: ["Programmer"],
+      projects: [
+        {name: "Temporal Urgency", url:"/temporal-urgency"},
+      ],
+      links: [
       ]
     },
     // {
